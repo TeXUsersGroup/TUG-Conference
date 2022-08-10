@@ -1,0 +1,385 @@
+\documentclass[pdf]{beamer}
+\mode<presentation>{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,german,french]{babel}
+\usepackage{graphics,hufflen-macros}
+
+\usetheme{Goettingen}
+
+\addtobeamertemplate{footline}{\hfill\insertpagenumber/\insertframenumber/%
+ \inserttotalframenumber\hspace*{0.2\textwidth}}
+
+\newcommand{\Dash}{---}
+\newcommand{\pgbiber}{\pgname{biber}}
+
+\def\LuaLaTeX{\textsf{Lua\LaTeX}}%
+
+\DeclareRobustCommand{\Xe}{\leavevmode
+ \tubhideheight{\hbox{X%
+   \setbox0=\hbox{\TeX}\setbox1=\hbox{E}%                                      
+   \lower\dp0\hbox{\raise\dp1\hbox{\kern\XekernbeforeE\tubreflect{E}}}%        
+   \kern\XekernafterE}}}
+
+\def\tubhideheight#1{\setbox0=\hbox{#1}\ht0=0pt \dp0=0pt \box0 }
+
+\def\tubreflect#1{%
+ \ifdim\fontdimen1\font>0pt%
+   \raise1.75ex\hbox{\kern.1em\rotatebox{180}{#1}}\kern-.1em%
+  \else\scalebox{-1}[1]{#1}%
+ \fi}
+
+\def\XekernafterE{-.1667em}
+\def\XekernbeforeE{-.125em}
+\def\XeLaTeX{\Xe{\kern.11em \LaTeX}}
+
+\title{Introduction à \LaTeX\ \Dash\ Tutoriel}
+\author{Jean-Michel Hufflen}
+\date{21~juillet 2022}
+\institute{TUG}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section*{Sommaire}
+
+\begin{frame}
+\tableofcontents[]
+\end{frame}
+
+\section{Quelques points reliés à la typographie}
+
+\begin{frame}{Qu'est-ce que la typographie ?}
+La \textbf{typographie} désigne les différents procédés de composition et
+d’impression utilisant des caractères et des formes en relief, ainsi que l’art
+d’utiliser les différents types de caractères dans un but esthétique et
+pratique. (\foreignlanguage{english}{\emph{Wikipedia}}).\pause
+
+En pratique, on touche à pas mal de détails :\pause
+\begin{itemize}
+ \item utilisation des diverses polices (gras, italiques) et de quelques
+caractères spéciaux (guillemets) ;\pause
+ \item composition des abréviations ;\pause
+ \item coupure des mots en fin de lignes, coupure des alinéas en fin de pages
+;\pause
+ \item \ldots
+\end{itemize}
+\end{frame}
+
+\begin{frame}{\LaTeX\ et la typographie}
+Pour des conseils particuliers, il existe beaucoup de références, imprimées ou
+en ligne.\pause
+
+Dans certains cas, il y a hésitation (par exemple, conflits de signes de
+ponctuation autour d'une parenthèse fermante).\pause
+
+En tout état de cause, le meilleur conseil qu'on puisse donner est d'être
+\emph{homogène}.\pause
+
+Ce qui, avec \LaTeX, est souvent possible avec des commandes de \emph{balisage
+sémantique}.\pause\ Par exemple :
+\begin{center}
+\foreignlanguage{english}{\commandone{newcommand}{\command{pgname}}\texttt{[1]\{\commandone{textsf}{\#1}\}}}
+\end{center}
+peut s'employer pour composer tous les noms de langages de programmation dans
+une police sans empattements. Si l'on change d'avis, on ne redéfinit \emph{que}
+le corps de la commande \foreignlanguage{english}{\command{pgname}}.
+\end{frame}
+
+\begin{frame}{\LaTeX\ et les langues}
+Résultat typographique de qualité professionnelle, mais surtout adapté à la
+langue anglaise.\pause
+
+Des \foreignlanguage{english}{\emph{packages}} adaptés permettent aujourd'hui
+d'écrire dans la plupart des langues du monde, éventuellement avec d'autres
+alphabets. D'autres moteurs permettent l'écriture dans des systèmes plus \og
+exotiques\fg.
+\end{frame}
+
+\begin{frame}{L'adaptation en général}
+Mots-clés (par exemple, \og Chapitre\fg).\pause
+
+Règles pour la division des mots (montrer).\pause
+
+En fait, les coupures de \LaTeX\ sont globalement satisfaisantes pour le
+français et ne nécessitent que peu d'interventions manuelles, sauf peut-être
+pour les coupures devant des syllabes muettes, d'ailleurs très
+controversées.\pause
+
+Présentations adaptées pour les dates et les nombres ordinaux.\pause
+
+Accents et signes diacritiques (quoiqu'à présent les versions modernes de
+\LaTeX\ s'appliquent par défaut à des textes en
+\foreignlanguage{english}{UTF-8}).
+\end{frame}
+
+\begin{frame}{Pour la langue française}
+\begin{itemize}
+ \item Premier alinéa en léger retrait à droite, comme les autres
+$\Longleftarrow$ \foreignlanguage{english}{\emph{package}
+\packagename{indentfirst}} ;\pause
+ \item les signes de ponctuation dits \emph{hauts} sont suivis d'une espace
+fine, comme ceci :
+
+n'est-ce pas ?
+
+mais ce n'est pas le cas de tous les signes.\pause
+
+Dans les textes sources des \foreignlanguage{english}{\emph{packages}
+\packagename{babel}} et \foreignlanguage{english}{\packagename{polyglossia}},
+vous pouvez laisser ou non une espace devant un signe de ponctuation haut.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{\foreignlanguage{english}{\emph{Package} \packagename{babel}}}
+Les options sont les langues possibles du document, même temporairement.\pause
+
+La langue du document est la \emph{dernière} option, ou indiquée par la clé \og
+\foreignlanguage{english}{\texttt{main=\ldots}}\fg.\pause
+
+Basculements :
+\begin{center}
+\begin{tabular}{@{}r@{ }l@{}}
+\foreignlanguage{english}{\commandone{selectlanguage}{\ldots}} & jusqu'à nouvel
+ordre, \\
+\foreignlanguage{english}{\commandtwo{foreignlanguage}{\ldots}{\ldots}} &
+temporaire.
+\end{tabular}
+\end{center}
+\end{frame}
+
+\begin{frame}{Quelques commandes de l'option
+\foreignlanguage{english}{\optionname{french}}}
+Guillemets français : \command{og} et \command{fg} (``\og'' et ``\fg'').\pause
+
+Abréviations d'adjectifs ordinaux : \foreignlanguage{english}{\command{ier}},
+\foreignlanguage{english}{\command{iere}},
+\foreignlanguage{english}{\command{iers}},
+\foreignlanguage{english}{\command{ieres}},
+\foreignlanguage{english}{\command{ieme}},
+\foreignlanguage{english}{\command{iemes}}.\pause
+
+\command{no}, \foreignlanguage{english}{\command{nos}}, \command{No},
+\foreignlanguage{english}{\command{Nos}} donnent respectivement \og \no\fg, \og
+\nos\fg, \og \No\fg, \og \Nos\fg. 
+\end{frame}
+
+\begin{frame}{\foreignlanguage{english}{\emph{Package}
+\packagename{polyglossia}}}
+Il offre des possibilités accrues en matière de multilinguisme, mais plutôt
+utilisable avec \foreignlanguage{english}{\XeLaTeX} ou
+\foreignlanguage{english}{Lua\LaTeX}.\pause
+
+Même principe : chargement des langues disponibles, mais la langue du document
+est la \emph{première} option.\pause
+
+Mais en fait, il vaut mieux employer les commandes
+\foreignlanguage{english}{\command{setmainlanguage}},
+\foreignlanguage{english}{\command{setotherlanguage}} et
+\foreignlanguage{english}{\command{setotherlanguages}} (montrer).\pause
+
+Beaucoup de commandes du \foreignlanguage{english}{\emph{package}
+\packagename{babel}} sont disponibles avec
+\foreignlanguage{english}{\packagename{polyglossia}}, les noms des langues
+pouvant souvent être remplacés par les codes \foreignlanguage{english}{ISO}
+correspondants.
+\end{frame}
+
+\begin{frame}{\foreignlanguage{english}{\emph{Package}
+\packagename{polyglossia}} et langue française}
+Commandes pour les abréviations d'adjectifs ordinaux disponibles.\pause
+
+Guillemets français : utiliser les chevrons ``\texttt{{<}{<}\ldots{>}{>}}'',
+avec des espaces fines si besoin est :
+``\texttt{{<}{<}\command{,}\ldots\command{,}{>}{>}}''.\pause 
+
+Pour des commandes telles que \og \command{No}\fg, utiliser la touche \og °\fg\
+ou la construction \og \texttt{N\commandone{textsuperscript}{o}}\fg.
+\end{frame}
+
+\begin{frame}{Que faire au vol ? Que laisser en dernier ?}
+Exemple : un mot exotique mal coupé. Mais une future version peut faire
+disparaître ce mot ou le placer au centre d'une ligne.\pause
+
+Par contre, taper \og préventivement\fg\ des espaces insécables (\og
+\texttt{\textasciitilde}\fg) à chaque fois que c'est pertinent est une bonne
+technique.
+\end{frame}
+
+\begin{frame}{Traitements préventifs}
+\begin{itemize}
+ \item utiliser systématiquement des références croisées pour les renvois ou
+les citations bibliographiques ;\pause
+ \item privilégier les commandes de balisage sémantique ;\pause
+ \item employer plutôt des \emph{rapports} de longueurs que des mesures
+absolues ;\pause
+ \item bien indiquer les changements de langue, excepté pour les mots très
+courts.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{À faire en dernier}
+Tout ce qui est vulnérable aux fins de lignes ou fins de pages :\pause
+\begin{itemize}
+ \item mots mal coupés (s'il n'y a pas d'erreur de langue) : très rares en
+colonnes simples, ils peuvent s'avérer plus épineux en doubles colonnes ; dans
+les cas graves, employer l'environnement
+\foreignlanguage{english}{\envtname{sloppypar}} ;\pause
+ \item notes marginales mal placées en début de page ;\pause
+ \item figures et autres objets flottants mal placés ;\pause
+ \item placement de figures enrobées (environnement
+\foreignlanguage{english}{\envtname{wrapfigure}}).
+\end{itemize}
+\end{frame}
+
+\section{Bibliographies}
+
+\begin{frame}{Commandes de \LaTeX\ pour la bibliographie}
+Même principe que les références croisées (commandes
+\foreignlanguage{english}{\command{label}} et
+\foreignlanguage{english}{\command{ref}}). La \emph{citation} se fait par \og
+\commandone{cite}{\ldots}\fg\ et une section bibliographique se construit à
+l'aide de l'environnement
+\foreignlanguage{english}{\envtname{thebibliography}}, les \emph{références}
+successives étant introduites par la commande
+\foreignlanguage{english}{\command{bibitem}} (montrer).
+\end{frame}
+
+\begin{frame}{Diversité des styles bibliographiques}
+L'imagination est au pouvoir en ce qui concerne les styles bibliographiques
+:\pause
+\begin{itemize}
+ \item ordre alphabétique d'auteurs (mathématiques et informatique),\pause
+ \item ordre de première citation dans le texte (médecine),\pause
+ \item en notes de bas de page (écoles d'infirmières), avec rappel ou non de la
+liste générale en fin de document.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Présentation des noms d'auteurs}
+Voici quelques exemples qui font ressentir la combinatoire à gérer :
+\begin{otherlanguage*}{english}
+\begin{center}
+\begin{tabular}{l@{\qquad\qquad}l}
+Kenneth Robeson & Robeson (Kenneth) \\
+                & Robeson, Kenneth
+\end{tabular}
+\end{center}
+\end{otherlanguage*}\pause
+en notant en outre que, selon les styles :
+\begin{itemize}
+ \item le nom de famille peut être écrit en caractères romains ou en petites
+capitales ;\pause
+ \item les prénoms peuvent être abrégés ou non ;\pause
+ \item lorsque \emph{plusieurs} auteurs sont à l'affiche pour une même
+référence, il arrive que le premier soit présenté légèrement différemment de
+tous ceux qui le suivent.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Manipuler vous-mêmes l'environnement de bibliographie ?}
+Très difficile en pratique à cause des problèmes signalés précédemment.\pause\
+Et en outre :\pause
+\begin{itemize}
+ \item \LaTeX\ ne signale pas si la section bibliographique contient des
+références inutilisées ;\pause
+ \item si le style est \foreignlanguage{english}{\emph{unsorted}}, un
+changement dans le texte peut induire un changement dans l'ordre des
+références ;\pause
+ \item si la \emph{clé de référence} utilisée dans le texte n'est pas un nombre
+et est de la forme \og \foreignlanguage{english}{[Rob~1965]}\fg, ce doit être
+l'argument optionnel de la commande
+\foreignlanguage{english}{\command{bibitem}}, à gérer vous-mêmes : encore un
+travail de fou !
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Utilisation de \emph{processeurs de bibliographies}}
+\begin{center}
+\begin{tabular}{r@{ :\quad}l}
+La tradition    & \foreignlanguage{english}{\BibTeX}, \\
+le nouveau-venu & \foreignlanguage{english}{\pgbiber} ; \\
+marginal        & \foreignlanguage{english}{\mlBibTeX}.
+\end{tabular}
+\end{center}\pause
+
+Le \emph{modus operandi} de \foreignlanguage{english}{\BibTeX} :
+\begin{itemize}
+ \item il ne lit pas de fichiers sources
+\foreignlanguage{english}{\filenameh{.tex}}, mais extrait de \emph{bases de
+données bibliographiques} (fichiers
+\foreignlanguage{english}{\filenameh{.bib}}) les ressources correspondant aux
+\emph{clés de citations} qu'il trouve dans un fichier auxiliaire (fichier
+\foreignlanguage{english}{\filenameh{.aux}}) ;\pause
+ \item plusieurs passes peuvent être nécessaires (montrer).
+\end{itemize}\pause
+
+Analogue pour \foreignlanguage{english}{\pgbiber} et
+\foreignlanguage{english}{\mlBibTeX}.
+\end{frame}
+
+\begin{frame}{Styles bibliographiques}
+Démonstration de quelques styles bibliographiques de base.\pause
+
+Plus élaborés : nécessitent le chargement d'un
+\foreignlanguage{english}{\emph{package}} dans le texte source.\pause\ Exemple
+avec la méthode \emph{auteur-date} (différente du style bibliographique
+\foreignlanguage{english}{\bibliographystylename{alpha}}) et sa première mise
+en œuvre complète : le \foreignlanguage{english}{\emph{package}
+\packagename{natbib}}.\pause
+
+D'autres exemples avec le \foreignlanguage{english}{\emph{package}
+\packagename{jurabib}} pour la mise en œuvre de la méthode \emph{titre-court}.
+\end{frame}
+
+\begin{frame}{Le \foreignlanguage{english}{\emph{package}
+\packagename{biblatex}}}
+Idée de base : tout ce qui concerne les références bibliographiques est exprimé
+par des commandes de \LaTeX, qui sont à définir pour obtenir le style
+souhaité.\pause
+
+En fait, cette idée était déjà présente dans les modules bibliographiques de
+\foreignlanguage{english}{\ConTeXt}.\pause
+
+Plus besoin de styles bibliographiques à la \foreignlanguage{english}{\BibTeX},
+quelques changements dans les commandes d'interface.
+\end{frame}
+
+\begin{frame}{Le programme \foreignlanguage{english}{\pgbiber}}
+Le \foreignlanguage{english}{\emph{package} \packagename{biblatex}} a
+considérablement accru le pouvoir d'expression des bases de données
+bibliographiques : ajout de nouveaux types, de nouveaux champs.\pause
+
+Les tris des références sont facilités.\pause
+
+Introduction d'un nouveau processeur de bibliographies :
+\foreignlanguage{english}{\pgbiber}, écrit dans le langage de programmation
+\foreignlanguage{english}{\pgPerl}.\pause
+
+Meilleur si vous utilisez \foreignlanguage{english}{\packagename{biblatex}},
+mais conçu uniquement dans ce but. En outre, si vous utilisez les extensions de
+\foreignlanguage{english}{\packagename{biblatex}}, un retour au \og
+\foreignlanguage{english}{\BibTeX} classique\fg\ peut s'avérer
+catastrophique\ldots\pause
+
+\ldots\ à moins d'utiliser les programmes
+\foreignlanguage{english}{\pgname{mlbibtex}} et
+\foreignlanguage{english}{\pgname{mlbiblatex}}.
+\end{frame}
+
+\begin{frame}{Une petite synthèse}
+Dans les sites \foreignlanguage{english}{\emph{Web}} de soumissions
+électroniques à des conférences scientifiques, c'est très souvent
+\foreignlanguage{english}{\BibTeX} qui reste utilisé. Le
+\foreignlanguage{english}{\emph{package} \packagename{biblatex}} et son
+programme compagnon \foreignlanguage{english}{\pgname{biber}} semblent être
+largement employés en Droit, Sciences Sociales et Humaines.\pause
+
+Au niveau français, \foreignlanguage{english}{\mlBibTeX} a servi à plusieurs
+laboratoires pour mettre à jour le site HAL d'archives ouvertes à partir de
+fichiers bibliographiques \foreignlanguage{english}{\filenameh{.bib}}.
+\end{frame}
+
+\end{document}

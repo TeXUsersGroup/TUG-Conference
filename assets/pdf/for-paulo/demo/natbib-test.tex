@@ -1,0 +1,37 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{natbib,url}
+\usepackage[english,french]{babel}
+
+\newcommand{\ds}{\foreignlanguage{english}{Doc Savage}}
+\newcommand{\web}{\foreignlanguage{english}{\emph{Web}}}
+
+\title{Essai de bibliographies}
+\author{Jean-Michel Hufflen}
+\date{Décembre 2014}
+
+\begin{document}
+
+\maketitle
+
+Essai de quelques références données çà et là dans le document pédagogique
+déposé sur le \web, par \citet{h2006}. Entre autres ouvrages, on y
+cite \citep{kurland1977,lint2002}. Au fait, ce document pédagogique se continue
+en un second épisode consacré au mode mathématique de \TeX\ \citep{h2006a}.
+
+J'y ajouterais que quand j'étais adolescent, j'étais vraiment captivé par les
+aventures de \ds. D'après certains, le meilleur épisode de la série est
+\foreignlanguage{english}{\emph{The Devil Genghis}} \citep{robeson1974c}, où
+\ds\ est aux prises pour la seconde fois avec \foreignlanguage{english}{John
+Sunlight}. Les épisodes que j'ai personnellement beaucoup appréciés sont
+\citep{robeson1968g,robeson1968j}. \`{A} mon avis, la chute de
+\citep{robeson1968j} est vraiment éblouissante, même si je comprends que
+certains lui préfèrent \citep{robeson1974c} ; rappelons que ce n'est qu'en
+\citeyear{robeson1974c} qu'il a été réédité.
+
+\bibliography{l1-cmi}
+\bibliographystyle{plainnat}
+
+\end{document}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" charset="utf-8">
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://momentjs.com/downloads/moment.js"></script>
+<script type="text/javascript" src="https://momentjs.com/downloads/moment-timezone-with-data-10-year-range.js"></script>
+
+<link rel="stylesheet" href="program.css">
+</head>
+
+<body>
+
+<h1><a href="/tug2021/">TUG 2022 online</a> — Program</h1>
+
+<div class="attentionLinks">
+
+<ul class="linkList">
+<!--
+<li id="zoom-list"><a href="https://adelaide.zoom.us/j/82471494905">Main Zoom link</a> for conference (with chat).  If you have issues connecting, please contact <a href="mailto:tug2021@tug.org">the conference committee</a>.
+<li style="clear:left;" id="youtube-list"><a href="https://www.youtube.com/c/TeXUsersGroup">Stream via youtube</a> (there is an unavoidable short delay from the live stream).
+-->
+<li style="clear:left;" id="youtube-list"><a href="https://www.youtube.com/c/TeXUsersGroup">Streams available now via youtube</a>
+<!--
+<li id="stream-list"><a href="https://support.zoom.us/hc/en-us/articles/214629443-Zoom-web-client" >Stream in a web browser</a>.
+<li id="info-list">Get together at <a href="https://topia.io/tug-2021">Topia</a> and <a href="https://tug.zulipchat.com/join/z7zb37mniu4p6ooptvmmuoep/">Zulip</a>.</li>
+-->
+</ul>
+</div>
+
+<div class="attention">
+  <h3 class="firstDate laTime"><img class="clockIcon" src="assets/img/icon-clock.png" alt="Current time" />Current local time is <span id="yourTime"></span>, as determined from your browser. All presentation times below are in time zone: <span id="yourTimeZone"></span>. If that is not correct adjust your system setting!</h3>
+
+  <!--
+  <h3 class="calendar"><a href="https://tug.org/tug2020/tug2020.ics"><img class="calendarIcon" src="img/icon-calendar.png" alt="Add to calendar" />Download ICS calendar file to add presentation times</a> to your calendar. Instructions <a href="https://tug.org/tug2020/ICS_import.html">here</a>.</h3>
+  -->
+</div>
+
+<div class="c">
+<button onclick="toggleAll()">Open/Close all abstracts</button>
+</div>
+<br>
+
+<!-- DAY ONE -->
+<!-- <h3 class="firstDate">Day One</h3> -->
+<list-of-presentations />
+
+<script>
+function toggleAll(){
+    var acc = document.getElementsByClassName("accordion");
+    var count = acc.length
+    var open = 0;
+    for (let i=0; i<count; i++){
+            open+=1 ? acc[i].nextElementSibling.style.display=="block":0
+            }
+    for (var i = 0; i < acc.length; i++) {
+        var panel = acc[i].nextElementSibling;
+        if (open==count) {
+          if(acc[i].classList.contains("active"))
+            acc[i].classList.toggle("active");
+          panel.style.display = "none";
+        } else {
+          if(!acc[i].classList.contains("active"))
+            acc[i].classList.toggle("active");
+          panel.style.display = "block";
+        }
+    }
+}
+
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+
+$( document ).ready(function() {
+
+    function displayUserTimezone() {
+        tzString = moment.tz.guess();
+        $('#yourTimeZone').html(tzString);
+    }
+
+    function displayUserTime() {
+        // For Civilan Time:
+        //timeString = moment().format('LTS');
+        timeString = moment().format('H:mm:ss A');
+        $('#yourTime').html(timeString);
+    }
+  
+    // Find all timeboxL elements and display their time.
+    $('.timeboxL').each(function(i, e) {
+        $e = $(e);
+        var datetime = $e.data('datetime');
+        // Skip in case datetime attribute is not there
+        if (datetime == null) {
+            return true;
+        }
+        var d = moment(datetime);
+        // Format in local time. See: https://momentjs.com/docs/#/displaying/format/
+        //var localTimeStr = d.format('llll');
+        var localTimeStr = d.format("ddd, D MMM – H:mm A");
+        $e.html(localTimeStr);
+    });
+
+    displayUserTimezone();
+    setInterval(function() {
+        displayUserTime()
+    }, 1000);
+    
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+Some basic requirements for Accessibility of tabular material are:
+</p> <div class="row"> <div class="column"> <ul>
+<li> each cell, whether header or content, must have an attribute providing a unique ID for that cell; </li>
+<li> each data cell must specify the corresponding row and column headers that most directly provide the meaning of the information contained within the cell.  This is done via a <span class="sans-serif">Headers</span> attribute using the unique IDs for the header cells. </li>
+</ul> </div> </div> <p>
+    <br /> <br />
+Header cells themselves may have other row or column headers; e.g., as a common header for a block of rows or columns.
+    <br /> <br />
+Tagged PDF has the tagging and mechanisms to provide such attributes.
+When the PDF is translated into HTML (using the  <span class="sans-serif">ngPDF</span> online converter, say) this information
+is recorded in the web-pages, to be available to Assistive Technologies.
+In this talk we show several examples of tables specified using various packages, as in the <span class="latex">L<span>a</span>T<span>e</span>X</span> Companion,
+both in PDF and HTML web pages. 
+A novel coding idea that allows this to be achieved will be presented.

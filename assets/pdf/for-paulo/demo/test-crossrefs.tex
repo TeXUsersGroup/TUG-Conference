@@ -1,0 +1,28 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,french]{babel}
+
+\newcommand{\filenameh}[1]{\textsf{#1}}
+
+\title{Essais de références croisées dans les fichiers \filenameh{.bib}}
+\author{Jean-Michel Hufflen}
+\date{Octobre 2015}
+
+\begin{document}
+
+\maketitle
+
+Voir \cite{lake2010},
+
+%puis \cite{page-lake2010},
+
+%et \cite{smith2010},
+
+%extraits de \cite{greenberg-hughes2010}.
+
+\bibliography{l1-cmi}
+\bibliographystyle{plain}
+
+\end{document}

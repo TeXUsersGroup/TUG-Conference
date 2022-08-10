@@ -1,0 +1,248 @@
+\documentclass[pdf]{beamer}
+\mode<presentation>{}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{graphics,hufflen-macros}
+
+\usetheme{Goettingen}
+
+\addtobeamertemplate{footline}{\hfill\insertpagenumber/\insertframenumber/%
+ \inserttotalframenumber\hspace*{0.2\textwidth}}
+
+\newcommand{\AllTeXplus}{\texorpdfstring{\AllTeX}{(La)\TeX}}
+\newcommand{\Dash}{---}
+
+\def\LuaLaTeX{\textsf{Lua\LaTeX}}%
+
+\DeclareRobustCommand{\Xe}{\leavevmode
+ \tubhideheight{\hbox{X%
+   \setbox0=\hbox{\TeX}\setbox1=\hbox{E}%                                      
+   \lower\dp0\hbox{\raise\dp1\hbox{\kern\XekernbeforeE\tubreflect{E}}}%        
+   \kern\XekernafterE}}}
+
+\def\tubhideheight#1{\setbox0=\hbox{#1}\ht0=0pt \dp0=0pt \box0 }
+
+\def\tubreflect#1{%
+ \ifdim\fontdimen1\font>0pt%
+   \raise1.75ex\hbox{\kern.1em\rotatebox{180}{#1}}\kern-.1em%
+  \else\scalebox{-1}[1]{#1}%
+ \fi}
+
+\def\XekernafterE{-.1667em}
+\def\XekernbeforeE{-.125em}
+\def\XeLaTeX{\Xe{\kern.11em \LaTeX}}
+
+\title{Extracting Information \\ from \AllTeXplus\ Source Files}
+\author{Jean-Michel Hufflen}
+\date{24~July 2022}
+\institute{TUG 2022}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section*{Contents}
+
+\begin{frame}
+\tableofcontents[]
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{\TeX\ldots}
+is a wonderful tool for typesetting texts $\Longleftarrow$ well known;\pause
+
+knows only its own formats $\Longleftarrow$ well known, too.\pause
+
+Some information belonging to \AllTeX\ source files may be usable for other
+purposes than typesetting, e.g., generating metadata for Web search
+engines.\pause
+
+\AllTeX's commands can do such jobs, but this is \emph{misuse} and complicates
+the writing of classes. \TeX\ has not been designed for that, it is preferable
+to use modern programming languages, with more suitable structures.
+\end{frame}
+
+\begin{frame}{Functional programming}
+Functions are first-class objects, as other data.\pause
+
+Functions can be results of a computation.\pause
+
+So we can easily write \emph{generators} of functions.\pause
+
+\pgScheme\ $\Longleftarrow$ elegant, data and programs have the same format, as
+in any \pgname{Lisp} dialect.
+\end{frame}
+
+\section{Description}
+
+\begin{frame}{Building a \emph{parsing function}}
+\begin{center}
+\texttt{(g-mk-tex-parsing-f \textsl{directive} \ldots)}
+\end{center}
+All the \emph{directives} are grouped, `compiled' into a function ready to
+parse a source file.
+\end{frame}
+
+\begin{frame}{Directives}
+\begin{small}
+\begin{ttfamily}
+\begin{tabbing}
+(g-retain-command \= \textsl{command-name} \textsl{arg-nb} 
+\textsl{optional-arg?} \\
+ \> \textsl{top-level?}\ \textsl{recursive?}\ \textsl{preamble?} \\
+ \> \textsl{occ-nb-info} \textsl{function})  
+\end{tabbing}
+\end{ttfamily}
+where:
+\begin{description}
+ \item[\textnormal{\texttt{\textsl{command-name}}}] is the name of the command
+to be caught;
+ \item[\textnormal{\texttt{\textsl{arg-nb}}}] is the argument number of this
+command;
+ \item[\textnormal{\texttt{\textsl{optional-arg?}}}] is true if the first
+argument is optional, surrounded by square brackets, false otherwise;
+ \item[\textnormal{\texttt{\textsl{top-level?}}}] is true if this command is to
+be searched only at the top level, false otherwise;
+ \item[\textnormal{\texttt{\textsl{recursive?}}}] is used when \command{input}
+commands are encountered: if it is true, corresponding files are searched
+recursively, otherwise such an \command{input} command is just skipped;
+ \item[\textnormal{\texttt{\textsl{preamble?}}}] stops searching after a
+preamble if it is bound to true; otherwise, goes on.
+\end{description}
+
+\end{small}
+\end{frame}
+
+\begin{frame}{Other arguments}
+\begin{description}
+ \item[\textnormal{\texttt{\textsl{occ-nb-info}}}] may be bound to:
+ \begin{itemize}
+  \item \texttt{0} or the false value (\texttt{\#f}): the command should not
+appear within the file, this is checked;
+  \item a positive integer $n$: the first $n$ occurrences of this command are
+processed, and following ones are ignored;
+  \item the true value (\texttt{\#t}): all the occurrences of this command are
+processed;
+ \end{itemize}
+ \item[\textnormal{\texttt{\textsl{function}}}] the \pgScheme\ function to
+call, it \emph{must} have the same number of arguments than
+\command{\textsl{command-name}}.
+\end{description}
+\end{frame}
+
+\begin{frame}{Directives \emph{(con'd)}}
+\begin{ttfamily}
+\begin{tabbing}
+(g-retain-match \= \textsl{command-name} \textsl{s} \textsl{top-level?}\ \\
+ \> \textsl{recursive?}\ \textsl{preamble}\ \textsl{occ-nb-info} \\
+ \> \textsl{function})
+\end{tabbing}
+\end{ttfamily}
+is used when \command{\textsl{command-name}}'s arguments are expressed by means
+of a pattern, e.g., \texttt{"\#1\textbackslash endcsname"} for the
+\command{csname} command. \texttt{\textsl{s}} is a string bound to such a
+pattern, the other arguments have the same meaning than
+\texttt{g-retain-command}'s.\pause
+
+The arguments of corresponding functions in \pgScheme\ are strings in both
+cases.
+\end{frame}
+
+\begin{frame}{Result's result}
+\texttt{g-mk-tex-parsing-f} builds a function that applies to a filename and
+returns:
+\begin{description}
+ \item[\textnormal{\texttt{false}}] if something went wrong, or a forbidden
+command is included into the file;
+ \item[\textnormal{\texttt{true}}] in all other cases. 
+\end{description}\pause
+
+You have to update your own structures when a file is parsed. If an error
+occurs, they may be in an inconsistent state.
+\end{frame}
+
+\begin{frame}{Destructuring}
+These functions can be used to destructure an optional
+argument\Dash\texttt{\textsl{s},\textsl{s}$_{0}$} are strings\Dash:\pause
+\begin{description}
+ \item[\textnormal{\texttt{(g-parse-to-list \textsl{s})}}] returns the elements
+of a comma-separated list;
+ \item[\textnormal{\texttt{(g-parse-to-alist \textsl{s} \textsl{s}$_{0}$)}}]
+returns the successive associations of a comma-separated list whose elements 
+are \texttt{\textsl{key=value}} pairs; if a key is given without a value, this
+missing value is replaced by \texttt{\textsl{s}$_{0}$}.
+\end{description}
+In both cases, the original order is preserved.\pause
+
+\textbf{Remark} \quad Note that \texttt{g-parse-to-list},
+\texttt{g-parse-to-alist}, \texttt{g-retain-command} and
+\texttt{g-retain-match} are functions, whereas \texttt{g-mk-tex-parsing-f} is a
+\emph{macro}.
+\end{frame}
+
+\begin{frame}{Example}
+Considering a source text for \LaTeX, give:
+\begin{itemize}
+ \item the used options of the \packagename{babel} package,
+ \item the title,
+ \item the number of occurrences of the \command{emph} command.
+\end{itemize}
+
+(Show.)
+\end{frame}
+
+\section{Discussion}
+
+\begin{frame}{`History'}
+When I realised \mlBibTeX, I needed to know which options of the
+\packagename{babel} package were used. Only the preamble was to be
+searched.\pause
+
+The same to determine which encoding was used.\pause
+
+One year and a half ago, I became the new editor of the journal of the
+French-speaking \TeX\ user group.\pause
+
+I decided to revise the class used for this journal and discovered that the
+previous class was used to build other files, such as metadata for Web search
+engines.\pause
+
+From my point of view, \TeX\ is intended for typesetting, and other tasks
+should be delegated to more modern programming languages.\pause
+
+I could have used \pgname{Lua}\ldots\pause\ but \pgname{Lua\TeX} was unable to
+process some texts designed for pdf\TeX\ or \XeLaTeX.
+\end{frame}
+
+\begin{frame}{Principles}
+Simple extractions\Dash e.g., a title\Dash must be simple.\pause
+
+If addressing occurrences of a \TeX\ command inside a source text, it should be
+possible to catch it.\pause
+
+But more experience will be needed.
+\end{frame}
+
+\section{Presently}
+
+\begin{frame}{Current state}
+Some bugs to fix for the pattern-matching of \TeX\ command's arguments.\pause
+
+The other points seems to be OK.\pause
+
+Available as a \pgScheme\ library.
+\end{frame}
+
+\section{Conclusion}
+
+\begin{frame}{Ending}
+For many years, we have seen that in addition to \TeX's works, many other tasks
+are more related to `classical' programming. In particular, that is why
+\pgname{Lua\TeX} emerged.\pause
+
+We relate our work to avoiding \emph{information redundancy}.
+\end{frame}
+
+\end{document}

@@ -1,0 +1,39 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,french]{babel}
+\usepackage[backend=biber,bibstyle=numeric,citestyle=authoryear]{biblatex}
+\addbibresource{l1-cmi.bib}
+
+\newcommand{\ds}{\foreignlanguage{english}{Doc Savage}}
+
+\title{Essai du \foreignlanguage{english}{\emph{package}} \texttt{biblatex}}
+\author{Jean-Michel Hufflen}
+\date{Décembre 2014}
+
+\begin{document}
+
+\maketitle
+
+Essai de quelques références \cite{kurland1977,lint2002} données çà et là dans
+le document pédagogique déposé sur le \foreignlanguage{english}{\emph{Web}}
+\cite{h2006}. Au fait, ce document pédagogique se continue en un second épisode
+\cite{h2006a} consacré au mode mathématique de \TeX.
+
+J'y ajouterais que quand j'étais adolescent, j'étais vraiment captivé par les
+aventures de \ds, par \foreignlanguage{english}{\citeauthor{robeson1968j}}.
+D'après certains, le meilleur épisode de la série est
+\foreignlanguage{english}{\citetitle{robeson1974c}} \cite{robeson1974c}, où
+\ds\ est aux prises pour la seconde fois avec \foreignlanguage{english}{John
+Sunlight}. J'ai personnellement beaucoup apprécié
+\foreignlanguage{english}{\citetitle{robeson1968g}} et
+\foreignlanguage{english}{\citetitle{robeson1968j}}
+\cite{robeson1968g,robeson1968j}. \`{A} mon avis, la chute du dernier
+\cite{robeson1968j} est vraiment éblouissante, même si je comprends que
+certains lui préfèrent \foreignlanguage{english}{\citetitle{robeson1974c}}
+\cite{robeson1974c}.
+
+\printbibliography
+
+\end{document}

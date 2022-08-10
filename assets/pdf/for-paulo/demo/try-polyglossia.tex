@@ -1,0 +1,52 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{polyglossia}
+\setmainlanguage{fr}
+\setotherlanguage{en}
+\setotherlanguages{german,polish}
+
+\newcommand{\packagename}[1]{\texttt{#1}}
+
+\title{Essais avec le \foreignlanguage{en}{\emph{package}
+\packagename{polyglossia}}}
+\author{Jean-Michel Hufflen}
+\date{21~juillet 2022}
+
+\begin{document}
+
+\maketitle
+
+Aujourd'hui : \today.
+
+\selectlanguage{en}
+
+Today is \today.
+
+\selectlanguage{german}
+
+Heute is \today.
+
+\selectlanguage{polish}
+
+Dzisiaj jest \today.
+
+\selectlanguage{french}
+
+Le pourri accepta l'idée de sa mort dès que la vitre arrière de la Buick
+explosa. Le visage du tueur se transforma soudain en une monstrueuse fleur
+sanglante et il s'écroula sur la banquette. Belle fin pour un pourri, s'pas ?
+
+J'ai mis longtemps à comprendre que le gars de derrière me poursuivait et qu'il
+risquait de me faire la peau. Après un tête-à-queue et quelques manœuvres
+musclées d'approche, le moteur de sa voiture cala, et son cœur aussi!
+
+Voici le 1\ier~extrait pour la 1\iere~fois. Vous êtes les~\iers\ et les~\ieres\
+à le voir. Puis viendront les 2\ieme~et 2\iemes~représentations des
+n\textsuperscript{o}2, n°3 et N\textsuperscript{o}4 du feuilleton, << dans les
+meilleures salles >>.
+
+\selectlanguage{en}{U enjoy using \packagename{polyglossia}, doncha?}
+
+\end{document}

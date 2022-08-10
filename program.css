@@ -1,0 +1,419 @@
+body {
+  text-align: center;
+  line-height: 1.2rem;
+  font-size: 17px;
+  padding:0;
+  margin: 0;
+}
+
+.accordion, .accordion-break {
+  background-color: #f5f5f5;
+  color: #282828;
+  padding: 13px 18px;
+  width: 80%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 110%;
+  transition: 0.4s;
+  border-bottom:2px #fff solid;
+}
+
+.accordion {
+  cursor: pointer;
+}
+
+.active, .accordion:hover, {
+  background-color: #333;
+  color:white;
+}
+
+.accordion-break {
+  background-color: #666;
+  color: white;
+}
+
+.accordion:after {
+  content: '\002B';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+.smcp {
+  -moz-font-feature-settings: 'smcp';
+  -webkit-font-feature-settings: 'smcp';
+  -o-font-feature-settings: 'smcp';
+  font-feature-settings: 'smcp';
+}
+
+.serif {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+p { 
+  width:80%;
+  margin:21px auto;
+  text-align: left;
+  font-size: 110%;
+  color:#585858;
+  letter-spacing: 0.02em;
+ }
+p:last-child {
+  margin:21px auto 36px auto;
+}
+
+ol, ul  { 
+/*  float:left; */
+  width:90%;
+  margin:21px auto;
+  padding-left:0;
+ }
+ol.secondList, ul.secondList  { 
+  padding-left:50px;
+  width:100%;
+ }
+ol.participants, ul.Participants, ol.subjects  { 
+  width:100%;
+ }
+li {
+  text-align: left;
+  font-size: 110%;
+  color:#585858;
+  letter-spacing: 0.02em;
+  padding-bottom:17px;
+}
+ol.participants li, ul.participants li, ol.subjects li, {
+  padding-bottom:9px;
+}
+li:last-child {
+  padding-bottom: 0;
+}
+h1 {
+  line-height: 2rem;
+}
+h2 {
+  padding-top: 30px;
+}
+
+h3 {
+  width: 80%;
+  margin:41px auto 21px auto;
+  text-align: left;
+}
+h3.firstDate {
+    margin:11px auto 21px auto;
+}
+h3.calendar, h3.laTime {
+    margin:11px auto 21px auto;
+    background-color: #FFF;
+    padding: 0 11px 0 21px;
+    min-height:48px;
+    line-height: 28px;
+    width:100%;
+}
+.timebox {
+  display: inline-block;
+  width: 80px;
+  text-align: right;
+  font-size: 95%;
+}
+
+/* Format the LaTeX symbol correctly (a higher up, e lower) */
+.latex span:nth-child(1) {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  vertical-align: 0.28em;
+  margin-left: -0.48em;
+  margin-right: -0.15em;
+  line-height: 1ex;
+}
+
+.latex span:nth-child(2) {
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;
+}
+
+/* Format the TeX symbol correctly (e lower) */
+.tex span:nth-child(1) {
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;
+}
+
+div.c {
+  text-align: right; 
+  width:80%;
+  margin:21px auto 0 auto;
+}
+
+div.c button {
+  text-align: center; 
+  padding: 11px;
+}
+
+/* For the two colum*/
+* {
+   box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 80%;
+  padding: 0 10px;
+}
+.row {
+  width:80%;
+  margin:0 auto;
+}
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.accordion > a.pdfLink {
+  color: #282828;
+  text-decoration: none;
+}
+.accordion:hover  > a.pdfLink, .accordion:hover  > a.pdfLink {
+  color:white;
+  text-decoration: none;
+}
+.presLink { margin: 0 0 0 5px; }
+
+.attention  {
+  width:70%;
+  padding: 20px 20px 0 20px;
+  border:1px #000 dashed;
+  overflow: hidden;
+  margin: 0 auto;
+  -webkit-box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);
+  -moz-box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);
+  box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);"
+}
+
+.calendarIcon, .clockIcon  { float: left; display:block; width:36px; height:36px; margin:-5px 11px 0 0; }
+
+.currentEvent {
+  background-color: #008080;
+  color: white;
+}
+
+.live {
+  display:inline-block;
+  font-weight: 600;
+  color: white;
+  font-style: normal;
+  padding:0 7px;
+  margin-right:7px;
+  background-color: salmon;
+}
+
+.clear {
+  clear:left;
+}
+
+.attentionLinks  {
+  max-width:60%;
+  padding: 20px 20px 0 20px;
+  border:1px #000 dashed;
+  overflow: hidden;
+  margin: 40px auto 30px auto;
+  -webkit-box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);
+  -moz-box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);
+  box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);"
+}
+
+.linkList{
+  max-width: 51rem;
+  margin: 0 auto 30px auto;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.linkList li {
+  float:left;
+  display: block;
+  background: #FFF url('img/icon-zoom.png') no-repeat left center;
+  padding:0;
+  margin:0;
+  padding-left:50px;
+  margin: 30px 0 15px 30px;
+  height: 40px;
+  padding-top:11px;
+  background-color: #ccc;
+}
+
+#zoom-list {
+  background: #FFF url('img/icon-zoom.png') no-repeat left center;
+}
+#stream-list {
+  background: #FFF url('img/icon-stream.png') no-repeat left top;
+}
+#live-list {
+  background: #FFF url('img/icon-live.png') no-repeat left top;
+}
+#youtube-list {
+  background: #FFF url('img/icon-youtube.png') no-repeat left top;
+}
+#info-list {
+  background: #FFF url('img/icon-info.png') no-repeat left top;
+}
+
+
+/*** MEDIA QUERIES ***/
+
+@media( max-width:320px ){
+  .accordion, .accordion-break {
+    width: 96%; 
+   }
+  p {
+    width: 96%;
+  }
+.column {
+  width: 96%;
+  }
+.attention, .attentionLinks  {
+  max-width:96%;
+  }
+}
+
+
+@media( max-width:360px ){
+  .accordion, .accordion-break {
+    width: 96%; 
+   }
+  p {
+    width: 96%;
+  }
+.column {
+  width: 96%;
+  }
+.attention, .attentionLinks  {
+  max-width:96%;
+  }
+}
+
+
+@media( max-width:487px ){
+  .accordion, .accordion-break {
+    width: 96%; 
+   }
+  p {
+    width: 96%;
+  }
+.column {
+  width: 96%;
+  }
+.attention, .attentionLinks  {
+  max-width:96%;
+  }
+}
+
+
+
+@media(max-width:576px) {
+  .accordion, .accordion-break {
+    width: 96%; 
+   }
+  p {
+    width: 96%;
+  }
+.column {
+  width: 96%;
+  }
+.attention, .attentionLinks  {
+  max-width:96%;
+  }
+}
+
+.sm-caps {
+   text-transform: uppercase; font-size: 0.85em !important; 
+}
+
+.sans-serif {
+   font-family: Helvetica, Arial, Sans-Serif;
+}
+
+.smallcaps {
+  font-variant: small-caps !important;
+}
+
+/* Format the LaTeX symbol correctly (a higher up, e lower) */
+.latex span:nth-child(1) {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  vertical-align: 0.28em;
+  margin-left: -0.48em;
+  margin-right: -0.15em;
+  line-height: 1ex;
+}
+
+.latex span:nth-child(2) {
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;
+}
+
+/* Format the TeX symbol correctly (e lower) */
+.tex span:nth-child(1) {
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;
+}
+
+.xetexwithsub sub {
+  vertical-align: -0.1ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  font-size: 0.9em;
+  text-transform:uppercase;
+}
+
+/* Format the XeTeX symbol correctly (a higher up, e lower) */
+.xetex span:nth-child(1) {
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;
+}
+
+.xetex span:nth-child(2) {
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;
+}
+
+/* Format the Xe{}something symbol correctly (a higher up, e lower) */
+.xesomething span:nth-child(1) {
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;

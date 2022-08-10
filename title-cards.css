@@ -1,0 +1,158 @@
+body {
+  text-align: center;
+  line-height: 1.2rem;
+  padding: 0;
+  margin: 0;
+  font-size: 17px;
+  color: white;
+  font-family: Times New Roman, Times, serif;
+  background-color: #FFFFFF;
+    background-color: #224a54;
+}
+.box { 
+	position: relative;
+	width: 1600px;
+	height: 900px;
+	overflow: hidden;
+    margin: 0 auto;
+ }
+
+#logo {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	margin: 0;
+	width:80px;
+	height:auto;
+}
+
+#tug2021 {
+	font-size: 36px;
+}
+
+#tug2021 a {
+	color: white;
+}
+
+h1 {
+	clear:both;
+	width: 600px;
+	height: auto;
+	margin: 84px auto 0 auto;
+	font-weight: bold;
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+hr {
+	width: 300px;
+	margin: 35px auto 0 auto;
+	color: white;
+ }
+ h2 {
+ 	clear: both;
+	font-weight: 400;
+	font-size: 5rem;
+	line-height: 5.5rem;
+	text-transform: none;
+	width: 960px;
+	margin:0 auto;
+	padding-top: 87px;
+ }
+ p {
+  	font-size: 3.25rem;
+ 	line-height: 3rem;
+ 	font-weight: 400;
+ 	padding-top: 40px;
+ 	width:900px;
+ 	margin:0 auto;
+ }
+ .banner {
+ 	display: block;
+ 	position: absolute;
+ 	bottom: 170px;
+ 	left: 350px;
+ 	font-size: 1.45rem;
+ 	color: #282828;
+ 	padding: 27px 0;
+ 	width: 900px;
+ 	margin:22px auto;
+ 	background-color: #fbe084;
+ }
+ #timer {
+ 	display:block;
+ 	position: absolute;
+ 	bottom: 0;
+ 	left: 650px;
+ 	font-size: 3.25rem;
+ 	font-weight: 400;
+ 	height:auto;
+ 	padding:46px 0;
+ 	border-top: 1px #FFFFFF solid;
+ 	margin: 20px auto 30px auto;
+ }
+em {
+ 	font-weight: bold;
+ 	font-style: normal;
+ }
+
+ /* Format the LaTeX symbol correctly (a higher up, e lower) */
+.latex span:nth-child(1) {
+  text-transform: uppercase;
+  font-size: 0.75em;
+  vertical-align: 0.28em;
+  margin-left: -0.48em;
+  margin-right: -0.15em;
+  line-height: 1ex;
+}
+
+.latex span:nth-child(2) {
+  text-transform: uppercase;
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+  line-height: 1ex;
+}
+
+
+#timer {
+  height: 4rem;
+  padding: 0;
+  font-size: 3.25rem;
+  line-height: 4rem;
+  display: flex;
+  overflow: hidden;
+}
+
+#timer::before, #timer::after {
+  content: '';
+  width: 12rem;
+  height: 1rem;
+  background: linear-gradient(to top, transparent, #224a54);
+  position: absolute;
+  z-index: 2;
+}
+
+#timer > div {
+  display: flex;
+}
+
+.tick {
+  line-height: 3.4rem;
+}
+
+.tick-hidden {
+  opacity: 0;
+}
+
+.move {
+  animation: move linear 1s infinite;
+}
+
+@keyframes move {
+  from {
+    transform: translateY(0rem);
+  }
+  to {
+    transform: translateY(-4rem);
+  }
+}

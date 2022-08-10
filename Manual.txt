@@ -1,0 +1,94 @@
+README  --> This files
+
+The Schedule::
+--------------
+sched.html
+sched.css
+
+To look at::
+------------
+make-schedule.js     -->    run it with the command "node make-schedule.js"
+presentations.js      -->   Needed by make-schedule.js and whats-on.js
+sched.html.in
+development-scripts.html.in
+production-scripts.html.in
+
+Database tables::
+people
+pres.dat
+
+What-is-on::
+------------
+whats-on.html   -->   https://tug.org/tug2021/whats-on.html?time=test
+title-card.js
+title-cards.css
+
+
+Utilities
+---------
+trans.sed   --> Sed script used to translate pidgin-TeX in abstracts to HTML.
+
+
+----------------
+
+All text is entered in UTF-8, titles and abstracts should
+be entered in HTML. The fields are:
+
+
+pres:
+author:
+title:
+timezone:
+time:
+abstract:
+sources:
+slides:
+link:
+preprint:
+video:
+---------
+The entries "author", "slides", "sources", "link", "preprint"
+and "video" can be multiple, with each entry separated by comma.
+
+We do not have a way, currently, to associate two different TZs
+for different authors. The TZ to be used will be of the person
+preferably given the talk.
+
+All fields are one-liners, including the abstract. If a newline
+is necessary use the <p> tag.
+
+An example is:
+
+--------
+pres: guichard-ltxworkshop
+author: Éric Guichard,Jean-Michel Hufflen
+title: LaTeX workshop in French
+timezone: +0200
+time: 2022-07-21T13:00:00Z
+slides: assets/pdf/Éric_Guichard-TUG2022-Workshop-Slides.pdf,assets/pdf/J.-M._Hufflen-TUG2022-Workshop-Slides.pdf
+sources: assets/pdf/Éric_Guichard.tar.gz,assets/pdf/hufflen-demo.tar.gz,assets/pdf/hufflen-main.tex.gz,assets/pdf/hufflen-t.tex.gz
+abstract: An atelier de LaTex en Français.
+---------
+
+The format for the breaks is:
+
+---------
+pres: break
+time: 2022-07-21T22:00:00Z
+title: Break,
+---------
+
+Right now the comma after the word "Break" in the title is required.
+We hope to fix that soon.
+
+The way to enter the Poshlets TeX, LaTeX, XeTeX and XeLaTeX are:
+
+       <span class="tex">T<span>e</span>X</span>
+       
+       <span class="latex">L<span>a</span>T<span>e</span>X</span>
+       
+       <span class="xetex">X<span>&#398;</span>T<span>e</span>X</span>
+       
+To enter acronyms, use Small Caps:
+
+       <span class="sm-caps">PDF</span>

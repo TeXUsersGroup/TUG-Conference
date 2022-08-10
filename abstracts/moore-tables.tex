@@ -1,0 +1,56 @@
+% This template is public domain.
+\documentclass{ltugboat}
+
+%\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{ifpdf}
+\ifpdf
+\usepackage[breaklinks,hidelinks]{hyperref}
+\else
+\usepackage{url}
+\fi
+
+%%% Start of metadata %%%
+
+\title{Accessible tables using `Tagged PDF'}
+
+% repeat info for each author.
+\author{Ross Moore}
+%\address{Department of Mathematics and Statistics\\Macquarie University\\ Sydney, Australia}
+\address{School of Mathematical and Physical Sciences\\Macquarie University\\ Sydney, Australia}
+\netaddress{ross.moore@mq.edu.au}
+\personalURL{https://researchers.mq.edu.au/en/persons/ross-moore}
+
+%%% End of metadata %%%
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Some basic requirements for Accessibility of tabular material are:
+\begin{itemize}
+\item 
+ each cell, whether header or content, must have an attribute providing
+ a unique ID for that cell;
+\item 
+ each data cell must specify the corresponding row and column headers
+ that most directly provide the meaning of the information contained within the cell.
+ This is done via a \textsf{Headers} attribute using the unique IDs for the header cells.
+\end{itemize}
+Header cells themselves may have other row or column headers; e.g., as a common header for a block of rows or columns.
+
+Tagged PDF has the tagging and mechanisms to provide such attributes.
+When the PDF is translated into HTML (using the  \textsf{ngPDF} online converter, say) this information
+is recorded in the web-pages, to be available to Assistive Technologies.
+In this talk we show several examples of tables specified using various packages, as in the \LaTeX\ Companion,
+both in PDF and HTML web pages. 
+A novel coding idea that allows this to be achieved will be presented.
+
+\end{abstract}
+
+\makesignature
+
+\end{document}
+
+\endinput
+

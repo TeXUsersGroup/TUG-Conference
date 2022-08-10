@@ -1,0 +1,44 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,french]{babel}
+\usepackage{jurabib}
+\jurabibsetup{%
+ citefull=first,super,ibidem,lookat,authorformat=allreversed,%
+ titleformat=italic%
+}
+
+\newcommand{\ds}{\foreignlanguage{english}{Doc Savage}}
+\newcommand{\web}{\foreignlanguage{english}{\emph{Web}}}
+
+\renewcommand{\url}[1]{\relax}
+
+\title{Essai du \foreignlanguage{english}{\emph{package} \texttt{jurabib}}}
+\author{Jean-Michel Hufflen}
+\date{Décembre 2014}
+
+\begin{document}
+
+\maketitle
+
+Essai de quelques références \cite{kurland1977,lint2002} données çà et là dans
+le document pédagogique déposé sur le \web\ \cite{h2006}. Au fait, ce document
+pédagogique se continue en un second épisode \cite{h2006a} consacré au mode
+mathématique de \TeX.
+
+J'y ajouterais que quand j'étais adolescent, j'étais vraiment captivé par les
+aventures de \ds. D'après certains, le meilleur épisode de la série est
+\foreignlanguage{english}{\citefield{title}{robeson1974c}} \cite{robeson1974c},
+où \ds\ est aux prises pour la seconde fois avec \foreignlanguage{english}{John
+Sunlight}. J'ai personnellement beaucoup apprécié
+\foreignlanguage{english}{\citefield{title}{robeson1968g}} \cite{robeson1968g}
+et \foreignlanguage{english}{\citefield{title}{robeson1968j}}
+\cite{robeson1968j}. \`{A} mon avis, la chute du dernier \cite{robeson1968j}
+est vraiment éblouissante, même si je comprends que certains lui préfèrent
+\foreignlanguage{english}{\citefield{title}{robeson1974c}} \cite{robeson1974c}.
+
+\bibliography{l1-cmi}
+\bibliographystyle{jurabib}
+
+\end{document}

@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>The Tectonic Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="reveal/reveal.css">
+  <link rel="stylesheet" href="pkgwtheme.css" id="theme">
+  <script>
+    if (window.location.search.match(/bbdebug/gi)) {
+      document.write('<style>.reveal .slides section.present { outline: 2px solid red; outline-offset: 0px; }</style>');
+    }
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <section>
+        <h1 class="maintitle1">The Tectonic Project</h1>
+        <h1 class="maintitle2">Envisioning a 21st-Century TeX Experience</h1>
+
+        <div class="titlefooter">
+          <p>Peter K. G. Williams (<a href="https://twitter.com/pkgw">@pkgw</a>)</p>
+          <p>Center for Astrophysics | Harvard &amp; Smithsonian</p>
+          <p>TUG'22</p>
+          <p>2022 July 22</p>
+        </div>
+      </section>
+
+
+      <section>
+        <h2>I’m delighted and honored to be presenting today.</h2>
+
+        <ul class="w60 ctr tbig mt4">
+          <li>Thank you!</li>
+          <li>Much of the work on Tectonic has been “to the side” of the main
+            TeX community</li>
+          <li>I’d love to start changing that!</li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h2>I come to TeX as a scientist, ~publisher, and developer.</h2>
+
+        <p class="mt1">I’m going to spend some time on my background to help
+          motivate the vision behind the Tectonic project.</p>
+
+        <ul class="w85 ctr mt2">
+          <li class="fragment">Research astronomer (radio interferometry, stellar/planetary magnetism)</li>
+          <li class="fragment">Innovation Scientist of the CfA and AAS</li>
+          <li class="fragment">Director, AAS WorldWide Telescope project (“WWT”)</li>
+          <li class="fragment">Work with AAS Publishing group (ApJ, ApJL, …)</li>
+          <li class="fragment">Work with <a href="https://ui.adsabs.harvard.edu/">NASA ADS</a> at CfA</li>
+          <li class="fragment">Moderator for astro-ph category on ArXiv.org (→ TeX Live, LaTeX)</li>
+          <li class="fragment">20+ years in open-source software development</li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h2>I’m preoccupied with scholarly communication.</h2>
+
+        <div class="mt1 fragment">
+          <p>There’s such a big gap between how we <i>could</i> be communicating
+            and how we actually <i>do</i>.</p>
+
+          <p class="tright">Gap = opportunity.</p>
+        </div>
+
+        <div class="fragment">
+          <p>In my view, that gap is almost entirely about the <i>tools</i> that
+            people have available to them.</p>
+
+          <p class="tright">🤔 …</p>
+        </div>
+
+        <p class="mt2 w70 ctr tctr fragment"><i>Many gap areas, but for me the
+            overriding one is the creation of <b>21st-century documents</b>. They
+            are <b>digital</b> and <b>interactive</b>.</i></p>
+
+        <p class="mt2 fragment">Specifically, they are HTML. This is the outcome
+          of <i>billions</i> of dollars of annual investment.</p>
+      </section>
+
+
+      <section>
+        <h2>HTML is used more and more widely. Like in these slides!</h2>
+
+        <div id="dulk1985" class="mt1"></div>
+
+        <table class="w100 d85-controls" style="border: 0px">
+          <tbody>
+            <tr>
+              <td>
+                <label id="dulk1985-logwidth-slider-label" for="dulk1985-logwidth-slider"></label>
+                <input id="dulk1985-logwidth-slider" type="range" />
+              </td>
+              <td>
+                <label id="dulk1985-logne-slider-label" for="dulk1985-logne-slider"></label>
+                <input id="dulk1985-logne-slider" type="range" />
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label id="dulk1985-b-slider-label" for="dulk1985-b-slider"></label>
+                <input id="dulk1985-b-slider" type="range" />
+              </td>
+              <td>
+                <label id="dulk1985-delta-slider-label" for="dulk1985-delta-slider"></label>
+                <input id="dulk1985-delta-slider" type="range" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+
+      <section>
+        <h2>For a while, HTML couldn’t do precision typography.</h2>
+
+        <div class="mt1 ml1 fr w50">
+          <img data-src="assets/shot-latex2html.jpg">
+          <p class="rcred"><a
+              href="http://www.sci.utah.edu/~macleod/latex/latex2html/Enode8.html">http://www.sci.utah.edu/~macleod/latex/latex2html/Enode8.html</a>
+          </p>
+        </div>
+
+        <p class="mt2">Without that, PDF is unquestionably the best “target
+          format” for digital <i>technical documents</i>. (… Right?)</p>
+
+        <div class="fragment">
+          <div class="pbl0 w45">
+            <img data-src="assets/PDF_js_Screenshot_in_Firefox_100_converted.jpg">
+            <p class="lcred"><a
+                href="https://en.wikipedia.org/wiki/PDF.js#/media/File:PDF_js_Screenshot_in_Firefox_100.png">Wikipedia,
+                0xDeadbeef</a></p>
+          </div>
+
+          <p class="pbr0 w50">For me, the release of <b>pdf.js</b> (July 2011)
+            proved that this problem could be solved.</p>
+        </div>
+      </section>
+
+
+      <section>
+        <h2>I wanted to see if I could get TeX-precise text into HTML.</h2>
+
+        <p class="mt1">That is, get equations etc. <i>as text</i>, not as
+          included images.</p>
+
+        <div class="fragment mt3">
+          <p>First strategy: clean-room implementation in JavaScript (2014).
+            “<i>TeX: The Program</i> is only 535 pages … how hard could it be?”</p>
+
+          <p class="tright">Pretty hard!</p>
+        </div>
+
+        <div class="fragment mt3">
+          <p>Underscored for me just how much value is embedded in the complete
+            TeX ecosystem — in both narrow and wide senses.</p>
+        </div>
+      </section>
+
+
+      <section>
+        <h2>Next, I looked into hacking (Xe)TeX itself …</h2>
+
+        <p>… with the aim of prototyping and testing different approaches. XeTeX
+          for Unicode and TrueType/OpenType font support.</p>
+
+        <p class="fragment mt2">The experience for a new developer looking to dive
+          in and play with the codebase is <b>ugly</b>.</p>
+
+        <p class="fragment mt2">I concluded that <i>I could not work with the code
+            in the way that I wanted within the existing framework</i>. I do not
+          want to work without Git, GitHub, pull requests, public CI, etc.</p>
+
+        <p class="fragment mt2">I see reasons for why things are the way they
+          are, but in my opinion there are tremendous opportunities that a
+          different approach could capture.</p>
+      </section>
+
+
+      <section>
+        <h2>If you can’t merge back, you’re forking, not branching.</h2>
+
+        <p>Adopting different infrastructure means that there’s no realistic
+          prospect for merging back into mainline (Xe)TeX( Live).</p>
+
+        <p class="fragment mt2">Forking is a big decision … but it can also be
+          liberating.</p>
+
+        <div class="fragment">
+          <img class="fr w30" data-src="assets/shot-driving-me-crazy.jpg">
+          <p class="mt2" style="padding-top: 3rem;">Specifically: the TeX user
+            experience (UX) often leaves something to be desired. Many aspects of
+            this UX just can’t change and still be called “TeX”.</p>
+        </div>
+
+        <p class="fragment mt2 tctr w75 tital ctr">We see the outlines of a new effort: an
+          experiment aiming to explore <b>TeX for the 21st century</b>.</p>
+      </section>
+
+
+      <section>
+        <h2><i>The Tectonic Project</i> is that experiment.</h2>
+
+        <p>Launched in 2016, I like to frame the project in terms of its vision(s):</p>
+
+        <p><i>A world where …</i></p>
+
+        <p class="fragment tital ml1">… people can easily create digital technical
+          documents that are beautiful and excellent</p>
+
+        <p class="fragment tital ml1">… document builds are reliable and reproducible</p>
+
+        <p class="fragment tital ml1">… TeX can go anywhere that it’s asked to</p>
+
+        <p class="fragment tital ml1">… using and learning TeX is fun, even delightful</p>
+
+        <p class="fragment ml1"><i>… the Tectonic project has a nice logo</i> 😉</p>
+
+        <p class="fragment">Key to Tectonic’s strategy is a distinctive brand identity.</p>
+      </section>
+
+
+      <section>
+        <h2>Tectonic is delivered as a self-contained executable.</h2>
+
+        <img class="fr ml1 w50" data-src="assets/shot-tarball-listing.jpg">
+
+        <p>Bundled traditional “engines” are <code>xetex</code>,
+          <code>bibtex</code>, and <code>xdvipdfmx</code>.
+        </p>
+
+        <div class="fragment mt2">
+          <p>The <code>xetex</code> engine implementation is based on the C code
+            generated by <code>web2c</code>, with extensive manual refactoring.</p>
+
+          <p class="tright"><a
+              href="https://github.com/tectonic-typesetting/tectonic-staging">https://github.com/tectonic-typesetting/tectonic-staging</a>
+          </p>
+        </div>
+
+        <div class="fragment mt2">
+          <p>To synchronize with new TeXLive releases, I have to manually import
+            and review all of the code changes.</p>
+        </div>
+      </section>
+
+
+      <section>
+        <h2>Outside of the “engines”, Tectonic is written in Rust.</h2>
+      </section>
+
+
+      <section data-background-image="assets/rust-evangelism-strike-force.webp" data-background-color="#000">
+      </section>
+
+
+      <section>
+        <h2>Outside of the “engines”, Tectonic is written in Rust.</h2>
+
+        <div class="fragment">
+          <img data-src="assets/rust-social-wide.jpg" class="w30 fr ml1">
+
+          <p style="padding-top: 2rem;">Rust is a “systems language”. Use it where you’d use C
+            or C++.
+            <i>Please.</i> <b>It is great.</b>
+          </p>
+        </div>
+
+        <p class="fragment">Rust’s packaging and compilation model is a great
+          fit for a project like Tectonic.</p>
+
+        <p class="fragment">Rust and TeX are similar languages in spirit, and
+          Tectonic aims to emulate much of the Rust ethos:</p>
+
+        <ul>
+          <li class="fragment">Ecosystem orientation — great tooling</li>
+          <li class="fragment">Welcoming atmosphere</li>
+          <li class="fragment">Experience-centered design</li>
+          <li class="fragment">Great error messages</li>
+        </ul>
+
+        <div class="fragment pbr w60">
+          <img data-src="assets/rust-error-message.jpg" class="w100" />
+        </div>
+      </section>
+
+
+      <section>
+        <h2>Tectonic fetches files from “bundles” on the fly.</h2>
+
+        <img class="fl mr1 w60" data-src="assets/shot-downloading.jpg">
+
+        <p class="mt1">Implemented using a virtualized I/O subsystem.</p>
+
+        <p class="fragment">Does not hit the network unless a new file is needed.</p>
+
+        <div class="fragment mt2">
+          <p>Bundle is basically a big tar file, identified with
+            a hash of its contents.</p>
+
+          <p class="tright"><a
+              href="https://github.com/tectonic-typesetting/tectonic-texlive-bundles">https://github.com/tectonic-typesetting/tectonic-texlive-bundles</a>
+          </p>
+        </div>
+
+        <p class="fragment mt2">The bundle is the cornerstone of Tectonic’s approach
+          to reproducible document builds.</p>
+      </section>
+
+
+      <section>
+        <h2>Tectonic has a “document model” for describing builds.</h2>
+
+        <img class="fr ml1 w70" data-src="assets/shot-demodoc.jpg">
+
+        <p><i>Extremely</i> cribbed from Rust’s Cargo.</p>
+
+        <p class="fragment">Express build settings through configuration, not
+          runtime options.</p>
+
+        <p class="fragment"><code>tectonic -X compile</code> for “one-shot”
+          builds.</p>
+
+        <p class="fragment mt2">Current framework is sparse, but hoped to be a
+          platform for lots of cool functionality in the future.</p>
+      </section>
+
+
+      <section>
+        <h2>Early HTML work is <i>finally</i> landing.</h2>
+
+        <p>The big question (to me): can we deliver precise typography?</p>
+
+        <p class="fragment">If you can use browser-compatible fonts, CSS lets you
+          position characters at will. But XeTeX outputs <i>glyphs</i>.</p>
+
+        <div class="fragment">
+          <p>Tectonic deals with this by reversing the Unicode→glyph
+            table and, when needed, emitting a “subsetted” font with custom mappings so
+            that it can force the browser to use the specific glyph TeX wants:</p>
+
+          <img data-src="assets/shot-htmlcss.jpg" class="w50 ctr">
+        </div>
+      </section>
+
+
+      <section>
+        <h2>Emphatically <i>not</i> trying to work on generic inputs, yet.</h2>
+
+        <p>My strategy is to try to benchmark really great output, then make
+          it “just work” more and more broadly.</p>
+
+        <div class="fragment w100">
+          <p>“Chrome” is <i>most</i> of the effort:</p>
+
+          <img class="w65 ctr" data-src="assets/shot-tex-wikipedia.jpg">
+        </div>
+
+        <p class="fragment mt1">Current chrome is called TDUX: the Tectonic
+          Default User Experience.</p>
+      </section>
+
+
+      <section>
+        <h2>I think there is an optimal layout for technical docs.</h2>
+
+        <img class="w95 mt1 ctr" style="border: 1px solid black" data-src="assets/shot-mdbook.jpg">
+      </section>
+
+
+      <section>
+        <h2>Tectonic prototyping is targeting <i>XeTeX: The Program</i>.</h2>
+
+        <p>It’s the perfect test case! Long, rich internal structure, and
+          useful.</p>
+
+        <div class="fragment">
+          <p>Current work is called <code>tt-weave</code>.</p>
+
+          <p class="tright"><a href="https://github.com/pkgw/tt-weave/">https://github.com/pkgw/tt-weave/</a>
+          </p>
+        </div>
+
+        <p class="fragment">It parses <code>WEB</code> code and emits it in
+          a prettified, C/Rust-like syntax.</p>
+
+        <p class="fragment">It will only ever target (patched)
+          <code>xetex.web</code> as an input.
+        </p>
+
+        <div class="fragment">
+          <p>Let’s take a look!</p>
+
+          <p class="fr w50 tright" style="color: red"><a href="./xtp_demo_july2022/" target="_blank">click here for
+              demo</a> —
+            opens in new window. Note
+            that this is a 10+MB download. Keys “c”, “g” pull up modals.</p>
+        </div>
+      </section>
+
+
+      <section>
+        <h2>I’m really excited to push this work forward.</h2>
+
+        <p>This kind of document is really a text-heavy web application.</p>
+
+        <p><i>Lots</i> of open research questions about how to design them. Most
+          answers happen in HTML space, not TeX.</p>
+
+        <div class="fragment">
+          <iframe data-src="https://www.gegen-menschenhandel.at/" class="w80 ctr" style="height: 27rem">
+          </iframe>
+        </div>
+      </section>
+
+
+      <section>
+        <h2>I’m really excited to push this work forward.</h2>
+
+        <p>This kind of document is really a text-heavy web application.</p>
+
+        <p><i>Lots</i> of open research questions about how to design them. Most
+          answers happen in HTML space, not TeX.</p>
+
+        <div class="fragment">
+          <iframe data-src="https://www.gegen-menschenhandel.at/" class="w80 ctr" style="height: 27rem">
+          </iframe>
+        </div>
+      </section>
+
+
+      <section>
+        <h2>After <code>tt-weave</code> comes Tectonic’s documentation.</h2>
+
+        <p>Hopefully.</p>
+
+        <div class="fragment">
+          <p>I find Divio’s “documentation system” to be compelling:</p>
+
+          <img class="w55 ctr" data-src="assets/divio-model-overview-converted.jpg">
+        </div>
+
+        <p class="fragment">For the “Reference” component, I would love to start
+          building a sort of “Tectonopedia”.</p>
+      </section>
+
+
+      <section>
+        <h2>Tectonic needs all the help it can get!</h2>
+
+        <p>There are so many areas where I’m an amateur at best:</p>
+
+        <ul class="w30 ctr">
+          <li>Fonts</li>
+          <li>Non-Latin scripts</li>
+          <li>Accessibility</li>
+          <li>TeX internals</li>
+          <li>Real typography</li>
+          <li>Mobile design</li>
+          <li>In-the-wild TeX workflows</li>
+          <li>… and much, much more!</li>
+        </ul>
+      </section>
+
+
+      <section>
+        <h2>Thank you for your attention!</h2>
+
+        <p>And my <b>immense gratitude</b> to the hundreds (thousands?) of
+          people whose effort Tectonic is building upon. Especially Jonathan Kew,
+          Khaled Hosny, Mark Wicks, and of course Donald Knuth, to name a few.</p>
+
+        <ul class="w65 ctr">
+          <li><b>Website:</b>&nbsp;&nbsp;<a
+              href="https://tectonic-typesetting.github.io/">https://tectonic-typesetting.github.io/</a></li>
+          <li><b>Code:</b>&nbsp;&nbsp;<a
+              href="https://github.com/tectonic-typesetting/">https://github.com/tectonic-typesetting/</a></li>
+          <li><b>Book:</b>&nbsp;&nbsp;<a
+              href="https://tectonic-typesetting.github.io/book/latest/">https://tectonic-typesetting.github.io/book/latest/</a>
+          </li>
+        </ul>
+
+        <p class="tctr tsmall mt3">Peter K. G. Williams •
+          <a href="mailto:pwilliams@cfa.harvard.edu">pwilliams@cfa.harvard.edu</a> •
+          <a href="https://twitter.com/pkgw">@pkgw</a> •
+          <a href="https://newton.cx/~peter/">newton.cx/~peter/</a>
+        </p>
+
+        <div class="w100" style="position: absolute; bottom: 0; font-size: 0.5em">
+          <p class="squish">
+            <em>HTML talk info</em>:
+            <a href="https://tinyurl.com/htmltalk">https://tinyurl.com/htmltalk</a>
+            •
+            <em>Design credits</em>:
+            <a href="https://hakim.se/">Hakim El Hattab</a> (“white” theme),
+            <a href="https://twitter.com/julietulanovsky">Julieta Ulanovsky</a> (Montserrat font),
+            <a href="http://christianrobertson.com/">Christian Robertson</a> (Roboto fonts)
+            •
+            <em>Tech credits</em>:
+            <a href="https://git-scm.com/">git</a>,
+            <a href="https://lab.hakim.se/reveal-js/">reveal.js</a>,
+            <a href="https://d3js.org/">d3.js</a>,
+            <a href="https://developer.mozilla.org/">Firefox</a> developer tools.
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="reveal/head.min.js"></script>
+  <script src="reveal/classList.js"></script>
+  <script src="reveal/reveal.js"></script>
+  <script src="d3/d3.min.js"></script>
+
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: false,
+      history: true,
+      center: false,
+      keyboard: true,
+      touch: false,
+      overview: true,
+      mouseWheel: false,
+      width: 1280,
+      height: 720,
+
+      theme: false, // hardcoded with CSS import in <head>
+      transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+      transitionSpeed: 'default', // default/fast/slow
+
+      dependencies: [
+        { src: 'reveal/notes/notes.js', async: true },
+        { src: 'lib/slideautostart.js', async: true },
+        { src: 'lib/dulk1985.js', async: true },
+        { src: 'lib/togglevidsonenter.js', async: true }
+      ],
+    });
+  </script>
+</body>
+
+</html>

@@ -17,7 +17,11 @@ project
 ## Authors
 
 Paulo Ney de Souza
+
 Jack Salvador
+
+Yoni Rosenbaum
+
 Arthur Rosendahl
 
 ## Version History

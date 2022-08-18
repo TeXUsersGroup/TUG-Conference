@@ -28,7 +28,7 @@ const parseDatabase = (datafile) => {
     const chunks = line.split(':');
     const key = chunks.shift();
     const value = chunks.join(':').trim();
-    if (key === 'slides') data[0][key] = value.split(',');
+    if (key === 'author' || key === 'slides' || key === 'preprint' || key === 'sources') data[0][key] = value.split(',');
     else data[0][key] = value;
   });
 
@@ -71,7 +71,9 @@ const formatData = (data) => {
       </div>\n\n` + dataFormatted;
 
     if (pres.sources) {
-      dataFormatted = `<a href="${pres.sources}"><img src="assets/img/tgz.png" height="24" alt="Sources" /></a>\n` + dataFormatted;
+      pres.sources.forEach((sourcesFile) => {
+        dataFormatted = `<a href="${sourcesFile}"><img src="assets/img/tgz.png" height="24" alt="Sources" /></a>\n` + dataFormatted;
+      });
     }
 
     if (pres.slides) {
@@ -81,13 +83,18 @@ const formatData = (data) => {
     }
 
     if (pres.preprint) {
-      dataFormatted = `<a class="pdfLink" href="${pres.preprint}"><img src="assets/img/PDF_24.png" alt="Preprint"/></a>` + dataFormatted;
+      pres.preprint.forEach((preprintFile) => {
+        dataFormatted = `<a class="pdfLink" href="${preprintFile}"><img src="assets/img/PDF_24.png" alt="Preprint"/></a>` + dataFormatted;
+      });
     }
 
     dataFormatted = `<font class="serif">${pres.title}</font>\n` + dataFormatted;
 
-    if (pres.author) dataFormatted = `| ${pres.author} ` + dataFormatted;
-
+//    if (pres.author) dataFormatted = `| ${pres.author} ` + dataFormatted;
+    if (pres.author) {
+      const authorsLine = new Intl.ListFormat('en-GB', { style: 'short', type: 'conjunction' }).format(pres.author);
+            dataFormatted = `| ${authorsLine} ` + dataFormatted;
+    }
     dataFormatted = `<button class="${klass}" id="${pres.time}">
       <span class="timeboxL" data-datetime="${pres.time}"></span>\n` + dataFormatted;
 

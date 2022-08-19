@@ -28,7 +28,7 @@ const parseDatabase = (datafile) => {
     const chunks = line.split(':');
     const key = chunks.shift();
     const value = chunks.join(':').trim();
-    if (key === 'author' || key === 'slides' || key === 'preprint' || key === 'sources') data[0][key] = value.split(',');
+    if (key === 'author' || key === 'slides' || key === 'preprint' || key === 'sources' || key === 'links' || key === 'videos') data[0][key] = value.split(',');
     else data[0][key] = value;
   });
 
@@ -69,6 +69,18 @@ const formatData = (data) => {
       ${pres.abstract}
       </p>
       </div>\n\n` + dataFormatted;
+
+    if (pres.videos) {
+      pres.videos.forEach((videosFile) => {
+        dataFormatted = `<a class="presLink" href="${videosFile}"><img class="presLink" src="assets/img/video.png" alt="Video" /></a>\n` + dataFormatted;
+      });
+    }
+
+    if (pres.links) {
+      pres.links.forEach((linksFile) => {
+        dataFormatted = `<a class="presLink" target="_blank" href="${linksFile}"><img class="presLink" src="assets/img/external-link-symbol-24.png" alt="Link" /></a>\n` + dataFormatted;
+      });
+    }
 
     if (pres.sources) {
       pres.sources.forEach((sourcesFile) => {

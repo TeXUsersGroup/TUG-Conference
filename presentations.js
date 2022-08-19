@@ -1,7 +1,9 @@
 const presentations = [
   {
     "pres": "veytsman-closing",
-    "author": "Boris Veytsman",
+    "author": [
+      "Boris Veytsman"
+    ],
     "title": "Conference closing",
     "timezone": "-0700",
     "time": "2022-07-24T21:15:00Z",
@@ -9,7 +11,9 @@ const presentations = [
   },
   {
     "pres": "matteson-adapt",
-    "author": "Steven Matteson",
+    "author": [
+      "Steven Matteson"
+    ],
     "title": "Type design: Catching up to the past",
     "timezone": "-0600",
     "time": "2022-07-24T20:30:00Z",
@@ -17,7 +21,10 @@ const presentations = [
   },
   {
     "pres": "park-music",
-    "author": "Christopher Park,Emily Park",
+    "author": [
+      "Christopher Park",
+      "Emily Park"
+    ],
     "title": "Musical composition typesetting",
     "timezone": "-0700",
     "time": "2022-07-24T19:45:00Z",
@@ -25,11 +32,15 @@ const presentations = [
   },
   {
     "pres": "spicer-chm",
-    "author": "Dag Spicer",
+    "author": [
+      "Dag Spicer"
+    ],
     "title": "A walk through 2,000 years of computer history",
     "timezone": "-0700",
     "time": "2022-07-24T19:00:00Z",
-    "preprint": "assets/pdf/Dag-Spicer-TUG2022-preprint.pdf",
+    "preprint": [
+      "assets/pdf/Dag-Spicer-TUG2022-preprint.pdf"
+    ],
     "slides": [
       "assets/pdf/Dag-Spicer-TUG2022-slides.pdf"
     ],
@@ -42,7 +53,9 @@ const presentations = [
   },
   {
     "pres": "lees-miller-interview",
-    "author": "John Lees-Miller",
+    "author": [
+      "John Lees-Miller"
+    ],
     "title": "In conversation with Paulo Ney de Souza",
     "timezone": "+0100",
     "time": "2022-07-24T17:15:00Z",
@@ -50,7 +63,9 @@ const presentations = [
   },
   {
     "pres": "goswami-numpy",
-    "author": "Rohit Goswami",
+    "author": [
+      "Rohit Goswami"
+    ],
     "title": "<span class=\"tex\">T<span>e</span>X</span> documentation and CI constraints for NumPy",
     "timezone": "0000",
     "time": "2022-07-24T16:30:00Z",
@@ -58,7 +73,9 @@ const presentations = [
   },
   {
     "pres": "fine-access",
-    "author": "Jonathan Fine",
+    "author": [
+      "Jonathan Fine"
+    ],
     "title": "Access and accessibility",
     "timezone": "+0100",
     "time": "2022-07-24T15:45:00Z",
@@ -66,14 +83,19 @@ const presentations = [
   },
   {
     "pres": "ohri-mathtrans",
-    "author": "Aditya Ohri,Tanya Schmah",
+    "author": [
+      "Aditya Ohri",
+      "Tanya Schmah"
+    ],
     "title": "Machine translation of mathematical text",
     "timezone": "-0400",
     "time": "2022-07-24T15:00:00Z",
     "slides": [
       "assets/pdf/Ohri-Schmah-TUG2022-slides.pdf"
     ],
-    "link": "https://doi.org/10.1109/ACCESS.2021.3063715",
+    "links": [
+      "https://doi.org/10.1109/ACCESS.2021.3063715"
+    ],
     "abstract": "We present a machine translation system, the PolyMath Translator, for <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> documents containing mathematical text. The system combines a <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> parser, tokenization of math and labels, a deep learning Transformer model trained on mathematical and other text, and the Google Translate <span class=\"sm-caps\">API</span> with a custom glossary. Ablation testing shows that math tokenization and the Transformer model each significantly improve translation quality, while Google Translate is used as a backup when the Transformer does not have confidence in its translation. For <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> parsing, we have used the pandoc document converter, while our latest development version instead uses the TexSoup package. We will describe the system, show examples, and discuss future directions."
   },
   {
@@ -83,7 +105,9 @@ const presentations = [
   },
   {
     "pres": "thurman-yex",
-    "author": "Marnanel Thurman",
+    "author": [
+      "Marnanel Thurman"
+    ],
     "title": "Building a <span class=\"tex\">T<span>e</span>X</span>-alike in Python",
     "timezone": "+0100",
     "time": "2022-07-24T13:15:00Z",
@@ -91,7 +115,9 @@ const presentations = [
   },
   {
     "pres": "wright-keyval",
-    "author": "Joseph Wright",
+    "author": [
+      "Joseph Wright"
+    ],
     "title": "Key—value setting handling in the kernel",
     "timezone": "+0100",
     "time": "2022-07-24T12:30:00Z",
@@ -99,7 +125,9 @@ const presentations = [
   },
   {
     "pres": "fischer-spotcolor",
-    "author": "Ulrike Fischer",
+    "author": [
+      "Ulrike Fischer"
+    ],
     "title": "Using spot colors with <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>",
     "timezone": "+0200",
     "time": "2022-07-24T11:45:00Z",
@@ -107,7 +135,9 @@ const presentations = [
   },
   {
     "pres": "sundqvist-lmtx-math",
-    "author": "Mikael P. Sundqvist",
+    "author": [
+      "Mikael P. Sundqvist"
+    ],
     "title": "Pushing math forward with <tt>luametatex</tt> and Con<span class=\"tex\">T<span>e</span>X</span>t",
     "timezone": "+0200",
     "time": "2022-07-24T11:00:00Z",
@@ -123,7 +153,9 @@ const presentations = [
   },
   {
     "pres": "hufflen-extract",
-    "author": "Jean-Michel Hufflen",
+    "author": [
+      "Jean-Michel Hufflen"
+    ],
     "title": "Extracting information from (La)<span class=\"tex\">T<span>e</span>X</span> source files",
     "timezone": "+0200",
     "time": "2022-07-24T09:15:00Z",
@@ -134,30 +166,45 @@ const presentations = [
   },
   {
     "pres": "mueller-stex3",
-    "author": "Dennis Müller,Michael Kohlhase",
+    "author": [
+      "Dennis Müller",
+      "Michael Kohlhase"
+    ],
     "authorascii": "Dennis Muller,Michael Kohlhase",
     "title": "s<span class=\"tex\">T<span>e</span>X</span>3—A <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>-based ecosystem for semantic/active mathematical documents",
     "timezone": "+0200",
     "time": "2022-07-24T08:30:00Z",
-    "preprint": "assets/pdf/Dennis-Muller-TUG2022-preprint.pdf",
+    "preprint": [
+      "assets/pdf/Dennis-Muller-TUG2022-preprint.pdf"
+    ],
     "slides": [
       "assets/pdf/Dennis-Muller-TUG2022-slides.pdf"
     ],
-    "link": "https://gl.mathhub.info/MiKoMH/talks/-/blob/main/source/dmueller/talks/tug22.tex",
+    "links": [
+      "https://gl.mathhub.info/MiKoMH/talks/-/blob/main/source/dmueller/talks/tug22.tex"
+    ],
     "abstract": "We report on s<span class=\"tex\">T<span>e</span>X</span>3– a complete redesign and reimplementation (using <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>3) from the ground up of the s<span class=\"tex\">T<span>e</span>X</span> ecosystem for semantic markup of mathematical documents. Specifically, we present: </p> <div class=\"row\"> <div class=\"column\"> <ol> <li> The s<span class=\"tex\">T<span>e</span>X</span> package that allows declaring semantic macros and provides a module system for organizing and importing semantic macros using logical identifiers. Semantic macros allow for annotating arbitrary LaTeX fragments, particularly symbolic notations and formulae, with their functional structure and formal semantics while keeping their presentation/layout intact. The module system induces a “theory graph”-structure on mathematical concepts, reflecting their dependencies and other semantic relations. </li> <li> The Rus<span class=\"tex\">T<span>e</span>X</span> system, an implementation of the core <span class=\"tex\">T<span>e</span>X</span> engine in Rust. Generally Rus<span class=\"tex\">T<span>e</span>X</span> allows for converting arbitrary <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> documents to <span class=\"sm-caps\">XHTML</span>. For s<span class=\"tex\">T<span>e</span>X</span>3 documents, these are enriched with semantic annotations based on the flexiformal <span class=\"sm-caps\">OMD</span>oc ontology. </li> <li> An <span class=\"sm-caps\">MMT</span> integration: The Rus<span class=\"tex\">T<span>e</span>X</span>-generated <span class=\"sm-caps\">XHTML</span> can be imported and served by the <span class=\"sm-caps\">MMT</span> system for semantically-informed knowledge management services, e.g., linking symbols in formulae to their definition or “guided tour” mini-courses for any (semantically annotated) mathematical concept/object. </li> </ol> </div> </div> <p>Generally, s<span class=\"tex\">T<span>e</span>X</span>3 documents can be made not only interactive (by embedding semantic services), but also “active” in that they actively adapt to reader preferences and pre-knowledge (if known)."
   },
   {
     "pres": "baranovskyi-vakthesis",
-    "author": "Oleksandr Baranovskyi",
+    "author": [
+      "Oleksandr Baranovskyi"
+    ],
     "title": "<span class=\"latex\">L<span>a</span>T<span>e</span>X</span> classes for doctoral theses in Ukraine: Interesting tips and painful problems",
     "timezone": "+0300",
     "time": "2022-07-24T07:45:00Z",
-    "preprint": "assets/pdf/Oleksandr-Baranovskyi-TUG2022-preprint.pdf",
+    "preprint": [
+      "assets/pdf/Oleksandr-Baranovskyi-TUG2022-preprint.pdf"
+    ],
     "abstract": "In the talk, I introduce <tt>vakthesis</tt>, a bundle of <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> classes for typesetting doctoral theses according to official requirements in Ukraine, discuss current status of the project and future development plans. Some <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> programming tricks that I have studied are considered."
   },
   {
     "pres": "cvr-submissions",
-    "author": "Apu V,Aravind Rajendran,Rishi T",
+    "author": [
+      "Apu V",
+      "Aravind Rajendran",
+      "Rishi T"
+    ],
     "title": "<span class=\"latex\">L<span>a</span>T<span>e</span>X</span> profiling of author submissions",
     "timezone": "+0530",
     "time": "2022-07-24T07:00:00Z",
@@ -170,7 +217,9 @@ const presentations = [
   },
   {
     "pres": "khalighi-bidi-multicol",
-    "author": "Vafa Khalighi",
+    "author": [
+      "Vafa Khalighi"
+    ],
     "title": "Bidirectional multi-columns and paragraph footnotes in <span class=\"tex\">T<span>e</span>X</span>",
     "timezone": "+1000",
     "time": "2022-07-24T02:30:00Z",
@@ -178,7 +227,9 @@ const presentations = [
   },
   {
     "pres": "moore-tables",
-    "author": "Ross Moore",
+    "author": [
+      "Ross Moore"
+    ],
     "title": "Accessible tables using Tagged <span class=\"sm-caps\">PDF</span>",
     "timezone": "+1000",
     "time": "2022-07-24T01:45:00Z",
@@ -186,13 +237,17 @@ const presentations = [
       "assets/pdf/Ross-Moore-TUG2022-AccessibleTables-Slides.pdf",
       "assets/pdf/Ross-Moore-TUG2022-TableSite-Slides.pdf"
     ],
-    "link": "http://web.science.mq.edu.au/~ross/TaggedPDF/TUG2022/",
+    "links": [
+      "http://web.science.mq.edu.au/~ross/TaggedPDF/TUG2022/"
+    ],
     "abstract": "Some basic requirements for Accessibility of tabular material are:</p> <div class=\"row\"> <div class=\"column\"> <ul> <li> each cell, whether header or content, must have an attribute providing a unique ID for that cell; </li> <li> each data cell must specify the corresponding row and column headers that most directly provide the meaning of the information contained within the cell.  This is done via a <span class=\"sans-serif\">Headers</span> attribute using the unique IDs for the header cells. </li> </ul> </div> </div> <p> Header cells themselves may have other row or column headers; e.g., as a common header for a block of rows or columns.  <br /> <br /> Tagged PDF has the tagging and mechanisms to provide such attributes.  When the PDF is translated into HTML (using the  <span class=\"sans-serif\">ngPDF</span> online converter, say) this information is recorded in the web-pages, to be available to Assistive Technologies.  In this talk we show several examples of tables specified using various packages, as in the <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> Companion, both in PDF and HTML web pages.  A novel coding idea that allows this to be achieved will be presented."
   },
   {
     "pres": "veytsman-interview",
     "title": "In conversation with Paulo Ney de Souza",
-    "author": "Boris Veytsman",
+    "author": [
+      "Boris Veytsman"
+    ],
     "timezone": "-0700",
     "time": "2022-07-24T01:00:00Z",
     "abstract": "Boris Veytsman, the president of TUG will be interviewed live by Paulo Ney de Souza, and you will be able to join the coversation."
@@ -204,7 +259,9 @@ const presentations = [
   },
   {
     "pres": "khalighi-persian-math",
-    "author": "Vafa Khalighi",
+    "author": [
+      "Vafa Khalighi"
+    ],
     "title": "Typesetting mathematics in Persian",
     "timezone": "+1000",
     "time": "2022-07-23T23:00:00Z",
@@ -212,7 +269,9 @@ const presentations = [
   },
   {
     "pres": "chernoff-engines",
-    "author": "Max Chernoff",
+    "author": [
+      "Max Chernoff"
+    ],
     "title": "Comparing <span class=\"tex\">T<span>e</span>X</span> engines and formats",
     "timezone": "+1200",
     "time": "2022-07-23T22:15:00Z",
@@ -223,7 +282,9 @@ const presentations = [
   },
   {
     "pres": "luc-vietnamese",
-    "author": "Tia Luc",
+    "author": [
+      "Tia Luc"
+    ],
     "title": "Observations and analysis of Vietnamese text",
     "timezone": "-0700",
     "time": "2022-07-23T21:30:00Z",
@@ -234,7 +295,9 @@ const presentations = [
   },
   {
     "pres": "nico-mathpix",
-    "author": "Nicolas Jimenez",
+    "author": [
+      "Nicolas Jimenez"
+    ],
     "title": "Bridging the gap between <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> / <span class=\"sm-caps\">PDF</span>s and the modern web",
     "timezone": "-0700",
     "time": "2022-07-23T20:45:00Z",
@@ -258,7 +321,9 @@ const presentations = [
   },
   {
     "pres": "wright-unicase",
-    "author": "Joseph Wright",
+    "author": [
+      "Joseph Wright"
+    ],
     "title": "Case changing: <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> reaches Unicode-land",
     "timezone": "+0100",
     "time": "2022-07-23T16:15:00Z",
@@ -269,7 +334,9 @@ const presentations = [
   },
   {
     "pres": "fischer-newlatex",
-    "author": "Ulrike Fischer",
+    "author": [
+      "Ulrike Fischer"
+    ],
     "title": "New in stock—a walk though recent <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> improvements (that you may have missed)",
     "timezone": "+0200",
     "time": "2022-07-23T15:30:00Z",
@@ -282,7 +349,9 @@ const presentations = [
   },
   {
     "pres": "samcarter-bricks",
-    "author": "samcarter",
+    "author": [
+      "samcarter"
+    ],
     "title": "Bricks and jigsaw pieces",
     "timezone": "+0200",
     "time": "2022-07-23T14:00:00Z",
@@ -294,7 +363,9 @@ const presentations = [
   },
   {
     "pres": "fine-uktug",
-    "author": "Jonathan Fine",
+    "author": [
+      "Jonathan Fine"
+    ],
     "title": "The UK <span class=\"tex\">T<span>e</span>X</span> Users Group—a personal history",
     "timezone": "+0100",
     "time": "2022-07-23T13:15:00Z",
@@ -302,7 +373,9 @@ const presentations = [
   },
   {
     "pres": "vrabcova-markdown",
-    "author": "Tereza Vrabcová",
+    "author": [
+      "Tereza Vrabcová"
+    ],
     "authorascii": "Tereza Vrabcova",
     "title": "A gentle introduction to <tt>Markdown</tt> for writers",
     "timezone": "+0200",
@@ -315,7 +388,10 @@ const presentations = [
   },
   {
     "pres": "shirore-luatruthtable",
-    "author": "Chetan Shirore,Ajit Kumar",
+    "author": [
+      "Chetan Shirore",
+      "Ajit Kumar"
+    ],
     "title": "The <tt>luatruthtable</tt> package in <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>",
     "timezone": "+0530",
     "time": "2022-07-23T12:00:00Z",
@@ -327,7 +403,9 @@ const presentations = [
   },
   {
     "pres": "gundlach-boxesandglue",
-    "author": "Patrick Gundlach",
+    "author": [
+      "Patrick Gundlach"
+    ],
     "title": "Boxes and glue: <span class=\"tex\">T<span>e</span>X</span> algorithms reimplemented",
     "timezone": "+0200",
     "time": "2022-07-23T11:15:00Z",
@@ -340,7 +418,9 @@ const presentations = [
   },
   {
     "pres": "khalighi-beamer",
-    "author": "Vafa Khalighi",
+    "author": [
+      "Vafa Khalighi"
+    ],
     "title": "Right to left <tt>beamer</tt> documents in <span class=\"xetex\">X<span>&#398;</span>T<span>e</span>X</span>",
     "timezone": "+1000",
     "time": "2022-07-23T03:00:00Z",
@@ -348,7 +428,9 @@ const presentations = [
   },
   {
     "pres": "preining-tl22",
-    "author": "Norbert Preining",
+    "author": [
+      "Norbert Preining"
+    ],
     "title": "<span class=\"tex\">T<span>e</span>X</span>Live 2022 status update",
     "timezone": "+0900",
     "time": "2022-07-23T02:15:00Z",
@@ -359,7 +441,9 @@ const presentations = [
   },
   {
     "pres": "veytsman-knitr",
-    "author": "Boris Veytsman",
+    "author": [
+      "Boris Veytsman"
+    ],
     "title": "Using <tt>knitr</tt> and <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> for literate lab notes",
     "timezone": "-0700",
     "time": "2022-07-23T01:30:00Z",
@@ -370,7 +454,9 @@ const presentations = [
   },
   {
     "pres": "castaneda-constitutions",
-    "author": "Sarai Castañeda",
+    "author": [
+      "Sarai Castañeda"
+    ],
     "title": "Fonts and formats of constitutions",
     "timezone": "-0700",
     "time": "2022-07-23T00:45:00Z",
@@ -378,7 +464,9 @@ const presentations = [
   },
   {
     "pres": "austin-airport",
-    "author": "Oliver Austin",
+    "author": [
+      "Oliver Austin"
+    ],
     "title": "Looking outside the cockpit: An in-depth look at airport signage",
     "timezone": "-0700",
     "time": "2022-07-23T00:00:00Z",
@@ -394,7 +482,9 @@ const presentations = [
   },
   {
     "pres": "blakesley-production",
-    "author": "David Blakesley",
+    "author": [
+      "David Blakesley"
+    ],
     "title": "The residual concepts of production vs. the emergent cultures of distribution in publishing",
     "keynote": "yes",
     "timezone": "-0400",
@@ -406,7 +496,12 @@ const presentations = [
   },
   {
     "pres": "hickman-creports",
-    "author": "Hubert Hickman,Matthew Mariano,Haibin Wu,Hong Dat Cheung",
+    "author": [
+      "Hubert Hickman",
+      "Matthew Mariano",
+      "Haibin Wu",
+      "Hong Dat Cheung"
+    ],
     "title": "Using <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> deployed in <span class=\"sm-caps\">AWS</span> as a <span class=\"sm-caps\">PDF</span> report generation tool for a cancer clinical trial search engine",
     "timezone": "-0500",
     "time": "2022-07-22T21:30:00Z",
@@ -414,7 +509,9 @@ const presentations = [
   },
   {
     "pres": "prentice-selfpub",
-    "author": "Lloyd Prentice",
+    "author": [
+      "Lloyd Prentice"
+    ],
     "title": "A self-publisher's take on <span class=\"tex\">T<span>e</span>X</span>",
     "timezone": "-0400",
     "time": "2022-07-22T20:45:00Z",
@@ -425,7 +522,9 @@ const presentations = [
   },
   {
     "pres": "cereda-tempest",
-    "author": "Paulo Cereda",
+    "author": [
+      "Paulo Cereda"
+    ],
     "title": "IoT theatre presents: The Tempest",
     "timezone": "-0300",
     "time": "2022-07-22T20:00:00Z",
@@ -438,7 +537,9 @@ const presentations = [
   },
   {
     "pres": "claudio-chess",
-    "author": "Jennifer Claudio",
+    "author": [
+      "Jennifer Claudio"
+    ],
     "title": "Revamping a youth chess workbook using <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> packages",
     "timezone": "-0700",
     "time": "2022-07-22T18:15:00Z",
@@ -449,7 +550,9 @@ const presentations = [
   },
   {
     "pres": "cereda-silly",
-    "author": "Paulo Cereda",
+    "author": [
+      "Paulo Cereda"
+    ],
     "title": "The story of a silly package",
     "timezone": "-0300",
     "time": "2022-07-22T17:30:00Z",
@@ -457,7 +560,9 @@ const presentations = [
   },
   {
     "pres": "wright-siunitx3",
-    "author": "Joseph Wright",
+    "author": [
+      "Joseph Wright"
+    ],
     "title": "<tt>siunitx</tt>: Launching version&nbsp;3",
     "timezone": "+0100",
     "time": "2022-07-22T16:45:00Z",
@@ -465,7 +570,9 @@ const presentations = [
   },
   {
     "pres": "evia-techdoc",
-    "author": "Carlos Evia",
+    "author": [
+      "Carlos Evia"
+    ],
     "title": "The future of technical documentation starts with its <i>recent</i> past",
     "keynote": "yes",
     "timezone": "-0400",
@@ -474,18 +581,26 @@ const presentations = [
   },
   {
     "pres": "williams-tectonic",
-    "author": "Peter K. G. Williams",
+    "author": [
+      "Peter K. G. Williams"
+    ],
     "title": "The Tectonic Project: Envisioning a 21st-century <span class=\"tex\">T<span>e</span>X</span> experience",
     "keynote": "yes",
     "timezone": "-0400",
     "time": "2022-07-22T15:15:00Z",
     "abstract": "Tectonic is a software project built around an alternative <span class=\"tex\">T<span>e</span>X</span> engine forked from <span class=\"xetex\">X<span>&#398;</span>T<span>e</span>X</span>. It was created to explore the answers to two questions.  The first question relates to documents: in a world of 21st-century technologies– where interactive displays, computation, and internet connectivity are generally cheap and ubiquitous– what new forms of technical document have become possible? The second question relates to tools: how can we use those same technologies to do a better job of empowering people to create excellent technical documents? The answers are, of course, intertwined: without a system of great tools, it’s hard (or perhaps impossible?) to create great documents.  <br /><br /> The premises of the Tectonic project are that the world needs and deserves a “21st-century” document authoring system, that such a system should have <span class=\"tex\">T<span>e</span>X</span> at its heart– and that in order to create a successful system, parts of the classic <span class=\"tex\">T<span>e</span>X</span> experience will need to be rethought or jettisoned completely.  <br /><br /> This is why Tectonic forks <span class=\"xetex\">X<span>&#398;</span>T<span>e</span>X</span> and is branded independently: while it aspires to maintain compatibility with classic <span class=\"tex\">T<span>e</span>X</span> workflows as far as can be managed, in a certain sense the whole point of the effort is to break compatibility and ignore tradition– to experiment with new ideas that can’t be tried in mainline <span class=\"tex\">T<span>e</span>X</span>. Thus far, these “new ideas” have focused on experience design, seeking to deliver a system that is convenient, empowering, and even delightful for users and developers. Tectonic is therefore compiled using standard Rust tools, installs as a single executable file, and downloads support files from a prebuilt <span class=\"tex\">T<span>e</span>X</span> Live distribution on demand.  <br /><br /> In the past year, long-threatened work on native <span class=\"sm-caps\">HTML</span> output has finally started landing, including a possibly novel Unicode math rendering scheme based on font subsetting. The goal for upcoming work is to flesh out this <span class=\"sm-caps\">HTML</span> support so that Tectonic can create the world’s best web-native technical documents, and to use that support to document the Tectonic system itself.",
-    "link": "assets/html/Peter-K-G-Williams-TUG2022-slides",
-    "sources": "assets/html/Peter-K-G-Williams-TUG2022-slides.tar.gz"
+    "links": [
+      "assets/html/Peter-K-G-Williams-TUG2022-slides"
+    ],
+    "sources": [
+      "assets/html/Peter-K-G-Williams-TUG2022-slides.tar.gz"
+    ]
   },
   {
     "pres": "veytsman-opening",
-    "author": "Boris Veytsman",
+    "author": [
+      "Boris Veytsman"
+    ],
     "title": "Conference opening",
     "timezone": "-0700",
     "time": "2022-07-22T15:00:00Z",
@@ -498,7 +613,9 @@ const presentations = [
   },
   {
     "pres": "borbom-ltxworkshop",
-    "author": "Alexánder Borbón",
+    "author": [
+      "Alexánder Borbón"
+    ],
     "title": "Introducción a <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>, in Spanish",
     "timezone": "-0700",
     "time": "2022-07-21T19:00:00Z",
@@ -506,7 +623,10 @@ const presentations = [
   },
   {
     "pres": "demeritt-ltxworkshop",
-    "author": "Susan DeMeritt,Cheryl Ponchin",
+    "author": [
+      "Susan DeMeritt",
+      "Cheryl Ponchin"
+    ],
     "title": "<span class=\"latex\">L<span>a</span>T<span>e</span>X</span> workshop, in English",
     "timezone": "-0700",
     "time": "2022-07-21T16:00:00Z",
@@ -514,7 +634,10 @@ const presentations = [
   },
   {
     "pres": "guichard-ltxworkshop",
-    "author": "Éric Guichard,Jean-Michel Hufflen",
+    "author": [
+      "Éric Guichard",
+      "Jean-Michel Hufflen"
+    ],
     "authorascii": "Eric Guichard,Jean-Michel Hufflen",
     "title": "An atelier de <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>, en Français",
     "timezone": "+0200",
@@ -523,7 +646,12 @@ const presentations = [
       "assets/pdf/Eric-Guichard-TUG2022-Workshop-Slides.pdf",
       "assets/pdf/J.-M.-Hufflen-TUG2022-Workshop-Slides.pdf"
     ],
-    "sources": "assets/pdf/Eric-Guichard.tar.gz,assets/pdf/hufflen-demo.tar.gz,assets/pdf/hufflen-main.tex.gz,assets/pdf/hufflen-t.tex.gz",
+    "sources": [
+      "assets/pdf/Eric-Guichard.tar.gz",
+      "assets/pdf/hufflen-demo.tar.gz",
+      "assets/pdf/hufflen-main.tex.gz",
+      "assets/pdf/hufflen-t.tex.gz"
+    ],
     "abstract": "1. Penser LaTeX, penser avec LaTeX Thèmes: histoire de l'écriture, concepts et apports de TeX et LaTeX Éric Guichard, 20 mn + 10 mn de débat.  </p> <p> 2. LaTeX, premiers pas Thèmes: réaliser un premier document en LaTeX; présentation illustrée d'exemples simples.  Éric Guichard, 15 à 20 mn + 10 mn de débat.  </p> <p> 3. Points de typographie Thèmes: généralités, césures, polices, langues.  Jean-Michel Hufflen, 15 à 20 mn + 10 mn de débat.  </p> <p> 4. LaTeX en milieu littéraire Thèmes: normes, confort de lecture, design, dialogue avec les éditeurs, communication avec d'autres systèmes éditoriaux.  Éric Guichard, 15 à 20 mn + 10 mn de débat.  </p> <p> 5. Bibliographies Thèmes: processeurs de bibliographies, styles de base, exemples.  Jean-Michel Hufflen, 15 à 20 mn + 10 mn de débat.  </p> <p> 6. Compléments (si le temps le permet) Thèmes: traitement des images, détournements de LaTeX.  Éric Guichard, 15 à 20 mn + 10 mn de débat."
   }
 ]

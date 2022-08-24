@@ -137,7 +137,7 @@ const formatData = (data) => {
 }
 
 const normalizeAuthorName = (author) => {
-  return author.replace(" ", "_");
+  return author.replaceAll(" ", "_");
 }
 
 /**

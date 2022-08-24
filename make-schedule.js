@@ -149,13 +149,19 @@ const normalizeAuthorName = (author) => {
  * @returns list of the copied files (paths of their new file names)
  */
 const copyInputFiles = (pres, assetType) => {
-  const incomingSourcesDir = `assets/incoming/${pres.pres}/${assetType}`;
+  const incomingTagDir = `assets/incoming/${pres.pres}`
+  const incomingAssetTypeDir = `${incomingTagDir}/${assetType}`;
+
+  // Create the incoming asset-type folder, if it doesn't exist
+  createDirIfNotExists(incomingTagDir);
+  createDirIfNotExists(incomingAssetTypeDir);
+
   let destPaths = [];
-  fs.readdirSync(incomingSourcesDir).forEach(file => {
+  fs.readdirSync(incomingAssetTypeDir).forEach(file => {
     const destFileName = getLongFileName(pres, file);
     const destPath = `assets/served/${destFileName}`;
     // Copy the file to the 'served' folder
-    fs.copyFile(`${incomingSourcesDir}/${file}`, destPath, (err) => {
+    fs.copyFile(`${incomingAssetTypeDir}/${file}`, destPath, (err) => {
       if (err) {
         console.log("Error copying file:", err);
       }
@@ -165,15 +171,14 @@ const copyInputFiles = (pres, assetType) => {
   return destPaths;
 }
 
-const createServedDir = () => {
-  const servedPath = "assets/served";
-  if (!fs.existsSync(servedPath)) {
-    fs.mkdirSync(servedPath);
+const createDirIfNotExists = (dir) => {
+  if (!fs.existsSync(dir)) {
+    fs.mkdirSync(dir);
   }
 }
 
 const writeout = (environment) => {
-  createServedDir();
+  createDirIfNotExists("assets/served");
   const inSchedule = fs.readFileSync('program.html.in', 'utf8');
   const outSchedule = inSchedule.replace(
                         '<list-of-presentations />',

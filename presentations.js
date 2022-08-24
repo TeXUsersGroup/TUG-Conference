@@ -38,12 +38,6 @@ const presentations = [
     "title": "A walk through 2,000 years of computer history",
     "timezone": "-0700",
     "time": "2022-07-24T19:00:00Z",
-    "preprint": [
-      "assets/pdf/Dag-Spicer-TUG2022-preprint.pdf"
-    ],
-    "slides": [
-      "assets/pdf/Dag-Spicer-TUG2022-slides.pdf"
-    ],
     "abstract": "Computer History Museum senior curator Dag Spicer takes us on a walk through computing history, from the Antikythera Mechanism to the first Google server.  <br /><br /> Dag Spicer is an electrical engineer and historian of science and technology. He began working at the Museum in 1996 and has built the Museum’s permanent collection into the largest archive of computers, software, media, oral histories, and ephemera in the world. Dag has given hundreds of interviews on computer history and related topics to major news outlets such as <em>The Economist</em>, <em>The New York Times</em>, <span class=\"sm-caps\">NPR</span>, <span class=\"sm-caps\">CBS</span>, <span class=\"sm-caps\">VOA</span>, and has appeared on numerous television programs including <em>Mysteries at the Museum</em> and <em><span class=\"sm-caps\">CBS</span> Sunday Morning</em>."
   },
   {
@@ -90,9 +84,6 @@ const presentations = [
     "title": "Machine translation of mathematical text",
     "timezone": "-0400",
     "time": "2022-07-24T15:00:00Z",
-    "slides": [
-      "assets/pdf/Ohri-Schmah-TUG2022-slides.pdf"
-    ],
     "links": [
       "https://doi.org/10.1109/ACCESS.2021.3063715"
     ],
@@ -141,9 +132,6 @@ const presentations = [
     "title": "Pushing math forward with <tt>luametatex</tt> and Con<span class=\"tex\">T<span>e</span>X</span>t",
     "timezone": "+0200",
     "time": "2022-07-24T11:00:00Z",
-    "slides": [
-      "assets/pdf/Mikael-Sundqvist-TUG2022-slides.pdf"
-    ],
     "abstract": "I will present an ongoing project with Hans Hagen with the challenging goal of improving the quality of mathematical typesetting, and to make both the input and output of math cleaner and more structured. Among the many enhancements, we mention here the introduction of new atom classes that has given a better control over the details, and the unboxing of fenced material, that together with improved line-breaking and more flexible multiline display math has created a coherent way to produce formulas that split over lines."
   },
   {
@@ -159,9 +147,6 @@ const presentations = [
     "title": "Extracting information from (La)<span class=\"tex\">T<span>e</span>X</span> source files",
     "timezone": "+0200",
     "time": "2022-07-24T09:15:00Z",
-    "slides": [
-      "assets/pdf/J.-M.-Hufflen-TUG2022-Slides.pdf"
-    ],
     "abstract": "We present some tools that allow us to parse all or part of All<span class=\"tex\">T<span>e</span>X</span> source files and process suitable information. For example, we can use them to extract some metadata of a document. These tools have been developed in the Scheme functional programming language. Using them only requires basic knowledge of functional programming and Scheme. Besides, these tools could be easily implemented using a strongly typed functional programming language, such as Standard <span class=\"sm-caps\">ML</span> or Haskell."
   },
   {
@@ -174,12 +159,6 @@ const presentations = [
     "title": "s<span class=\"tex\">T<span>e</span>X</span>3—A <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>-based ecosystem for semantic/active mathematical documents",
     "timezone": "+0200",
     "time": "2022-07-24T08:30:00Z",
-    "preprint": [
-      "assets/pdf/Dennis-Muller-TUG2022-preprint.pdf"
-    ],
-    "slides": [
-      "assets/pdf/Dennis-Muller-TUG2022-slides.pdf"
-    ],
     "links": [
       "https://gl.mathhub.info/MiKoMH/talks/-/blob/main/source/dmueller/talks/tug22.tex"
     ],
@@ -193,9 +172,6 @@ const presentations = [
     "title": "<span class=\"latex\">L<span>a</span>T<span>e</span>X</span> classes for doctoral theses in Ukraine: Interesting tips and painful problems",
     "timezone": "+0300",
     "time": "2022-07-24T07:45:00Z",
-    "preprint": [
-      "assets/pdf/Oleksandr-Baranovskyi-TUG2022-preprint.pdf"
-    ],
     "abstract": "In the talk, I introduce <tt>vakthesis</tt>, a bundle of <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> classes for typesetting doctoral theses according to official requirements in Ukraine, discuss current status of the project and future development plans. Some <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> programming tricks that I have studied are considered."
   },
   {
@@ -233,10 +209,6 @@ const presentations = [
     "title": "Accessible tables using Tagged <span class=\"sm-caps\">PDF</span>",
     "timezone": "+1000",
     "time": "2022-07-24T01:45:00Z",
-    "slides": [
-      "assets/pdf/Ross-Moore-TUG2022-AccessibleTables-Slides.pdf",
-      "assets/pdf/Ross-Moore-TUG2022-TableSite-Slides.pdf"
-    ],
     "links": [
       "http://web.science.mq.edu.au/~ross/TaggedPDF/TUG2022/"
     ],
@@ -275,9 +247,6 @@ const presentations = [
     "title": "Comparing <span class=\"tex\">T<span>e</span>X</span> engines and formats",
     "timezone": "+1200",
     "time": "2022-07-23T22:15:00Z",
-    "slides": [
-      "assets/pdf/Max-Chernoff-TUG2022-slides.pdf"
-    ],
     "abstract": "Initially, <span class=\"tex\">T<span>e</span>X</span> was a single engine and a single format.  However, over the past 40 years, the number of engines and formats has significantly grown, meaning that there are multiple ways of implementing similar solutions depending on the <span class=\"tex\">T<span>e</span>X</span> variant used. In this talk, I’ll introduce and compare each engine and format, focusing on both history and practical tips."
   },
   {
@@ -288,9 +257,6 @@ const presentations = [
     "title": "Observations and analysis of Vietnamese text",
     "timezone": "-0700",
     "time": "2022-07-23T21:30:00Z",
-    "slides": [
-      "assets/pdf/Tia-Luc-TUG2022-Slides.pdf"
-    ],
     "abstract": "Having Vietnamese as my first language and English as my dominant language has inspired exploration of the history and applications of the former. Considering how Vietnamese and English both use the Latin alphabet, this presentation will explore the similarities and differences between the two using a collection of instances in which Vietnamese text is displayed in our world."
   },
   {
@@ -327,9 +293,6 @@ const presentations = [
     "title": "Case changing: <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> reaches Unicode-land",
     "timezone": "+0100",
     "time": "2022-07-23T16:15:00Z",
-    "slides": [
-      "assets/pdf/Joseph-Wright-case-TUG2022-slides.pdf"
-    ],
     "abstract": "In 2015, I talked about my work exploring Unicode-land, particularly how to carry out case changing in <span class=\"xetex\">X<span>&#398;</span>T<span>e</span>X</span> and Lua<span class=\"tex\">T<span>e</span>X</span> properly. Since then, <tt>expl3</tt> has become a part of the <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> kernel, and LaTeX has adopted <span class=\"sm-caps\">UTF-8</span> as the standard input encoding. The time has therefore become ripe to “open up” Unicode-land to allow <tt>MakeUppercase</tt> and <tt>MakeLowercase</tt> to roam free.  <br /><br /> In this talk, I’ll remind us of what Unicode tells us about case changing, where the challenges are and how we’ve approached them in <tt>expl3</tt>. I’ll then show how this has combined with some <span class=\"tex\">T<span>e</span>X</span> features to enable us to make the switch, incorporate ideas from the <tt>textcase</tt> package and upgrade <tt>MakeUppercase</tt> and <tt>MakeLowercase</tt> for the 21<sup>st</sup> century."
   },
   {
@@ -355,10 +318,6 @@ const presentations = [
     "title": "Bricks and jigsaw pieces",
     "timezone": "+0200",
     "time": "2022-07-23T14:00:00Z",
-    "slides": [
-      "assets/pdf/samcarter-bricks-TUG2022-slides.pdf",
-      "assets/pdf/samcarter-jigsaw-TUG2022-slides.pdf"
-    ],
     "abstract": "Real world bricks and jigsaw puzzles are a fun pastime for many people.  The <span class=\"sm-caps\">tikzbricks</span> and <span class=\"sm-caps\">jigsaw</span> packages bring them to the <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> world. This short talk will give an overview of both packages and show examples how they can be used."
   },
   {
@@ -380,10 +339,6 @@ const presentations = [
     "title": "A gentle introduction to <tt>Markdown</tt> for writers",
     "timezone": "+0200",
     "time": "2022-07-23T12:30:00Z",
-    "slides": [
-      "assets/pdf/Tereza-Vrabcova-TUG2022-example.pdf",
-      "assets/pdf/Tereza-Vrabcova-TUG2022-slides.pdf"
-    ],
     "abstract": "<span class=\"tex\">T<span>e</span>X</span> is great for producing beautiful documents, but not the easiest to read and write. At this workshop, you will learn about Markdown and how you can use it to produce different types of beautiful documents from beautiful source texts that don’t distract you from your writing."
   },
   {
@@ -396,9 +351,6 @@ const presentations = [
     "timezone": "+0530",
     "time": "2022-07-23T12:00:00Z",
     "delivery": "https://drive.google.com/file/d/1I8WzVN6FloURqt00x2xISG4WVCzCTQq6",
-    "slides": [
-      "assets/pdf/Chetan-Shirore-TUG2022-slides.pdf"
-    ],
     "abstract": "This paper describes the development and usage of the <tt>luatruthtable</tt> package in <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>. It is developed to generate truth tables of boolean values in a <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> document. The package provides an easy way of generating truth tables in <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>. There is no need of special environment in <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> in the package for the generation of truth tables. It is written in Lua and <span class=\"tex\">T<span>e</span>X</span> file is to be compiled with Lua<span class=\"latex\">L<span>a</span>T<span>e</span>X</span> engine.  <br /><br /> The Lua programming language is a scripting language which can be embedded across platforms. With Lua<span class=\"tex\">T<span>e</span>X</span> and the <tt>luacode</tt> package, it is possible to use Lua in <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>. All<span class=\"tex\">T<span>e</span>X</span> have some scope for programming, but with the internals of <span class=\"tex\">T<span>e</span>X</span> there are several limitations especially for performing calculations. Packages like <tt>pgf</tt> and <tt>xparse</tt> in <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> provide some programming capabilities inside <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> documents, but such packages are not meant to provide the complete programming structure that general programming languages, like Lua, provide.  <br /><br /> The generation of truth tables with these packages in <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> became complex, and probably without using Lua it can’t be done in an easier way in <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>. The programming capabilities of Lua are effectively used in the development of <tt>luatruthtable</tt> package. The <tt>xkeyval</tt> package is used in its development, in addition to the <tt>luacode</tt> package. The time needed for generation of truth tables using the package and compilation of a <span class=\"tex\">T<span>e</span>X</span> document with Lua<span class=\"tex\">T<span>e</span>X</span> is not an issue."
   },
   {
@@ -434,9 +386,6 @@ const presentations = [
     "title": "<span class=\"tex\">T<span>e</span>X</span>Live 2022 status update",
     "timezone": "+0900",
     "time": "2022-07-23T02:15:00Z",
-    "slides": [
-      "assets/pdf/Norbert-Preining-TUG2022-slides.pdf"
-    ],
     "abstract": "This talk reports on changes within the <span class=\"tex\">T<span>e</span>X</span>Live project and distribution over the last year, as well as looking at further development directions and challenges we are facing."
   },
   {
@@ -447,9 +396,6 @@ const presentations = [
     "title": "Using <tt>knitr</tt> and <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> for literate lab notes",
     "timezone": "-0700",
     "time": "2022-07-23T01:30:00Z",
-    "slides": [
-      "assets/pdf/Boris-Veytsman-TUG2022-slides.pdf"
-    ],
     "abstract": "One of Knuth’s important insights was the concept of literate programming, where the prose is as important as the code. Now many scientists in different fields are having similar insights about their work. While the published papers have been always recognized as the works of literature, now we start to understand this with respect to lab notes, the lowly reports of our daily activity. This explains the new interest to notebook interfaces: from commercial programs like Matlab and Mathematica to free systems like Wxmaxima and Jupyter.  <br /><br /> In this talk I discuss the approach that uses <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> and <tt>knitr</tt> for creating lab notes. I compare it with the available notebook interfaces and the the solutions based on Markdown."
   },
   {
@@ -470,9 +416,6 @@ const presentations = [
     "title": "Looking outside the cockpit: An in-depth look at airport signage",
     "timezone": "-0700",
     "time": "2022-07-23T00:00:00Z",
-    "slides": [
-      "assets/pdf/Oliver-Austin-TUG2022-slides.pdf"
-    ],
     "abstract": "If you take a quick glance at an airport and its signage, you’ll see many different situations where text is used to enhance and streamline processes for both pilot and ground crew alike. Thus, this exploration will take a closer look at such variations along the taxiway and apron at major airports, also discussing how the onset of autonomous aircraft can factor into it."
   },
   {
@@ -489,9 +432,6 @@ const presentations = [
     "keynote": "yes",
     "timezone": "-0400",
     "time": "2022-07-22T22:15:00Z",
-    "slides": [
-      "assets/pdf/David-Blakesley-TUG2022-slides.pdf"
-    ],
     "abstract": "Who wins? The base or the superstructure? I’m not a Marxist per se, but I’ve lived this struggle for some time as a writer and publisher. In this keynote presentation, I describe my efforts to change or adapt the democratized tools of production to produce new forms of writing, which ultimately led to an ongoing battle with the dominant cultures of production in the world of publishing. I’ll narrate two case studies. One focuses on the writing and production of an innovative, if not disruptive, textbook in the ultra-conservative textbook industry. The second tells the ongoing story of an interloping publishing company (Parlor Press) that reveals the central challenge of <i>distribution</i> for both writers and publishers, from typesetting (print) to transformation (digital). <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> developers and users, take note! The return of the nonbreaking space and soft return is nigh!"
   },
   {
@@ -515,9 +455,6 @@ const presentations = [
     "title": "A self-publisher's take on <span class=\"tex\">T<span>e</span>X</span>",
     "timezone": "-0400",
     "time": "2022-07-22T20:45:00Z",
-    "slides": [
-      "assets/pdf/Lloyd-Prentice-TUG2022-slides.pdf"
-    ],
     "abstract": "This presentation touches on:</p> <div class=\"row\"> <div class=\"column\"> <ul> <li> the <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> markdown package; </li> <li> <span class=\"tex\">T<span>e</span>X</span>Live installation </li> <li> user documentation; </li> <li> suitability for self-publishers. </li> </ul> </div> </div> <p> It will present examples of Markdown to <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>-styled <span class=\"sm-caps\">PDF</span>.  <br /><br /> It will also announce two initiatives: a <span class=\"tex\">T<span>e</span>X</span> Live book publishing scheme; and a website where self-publishers can find <span class=\"tex\">T<span>e</span>X</span> Live installation instructions plus book publishing how-tos, tutorials, and resources.  <br /><br /> Lloyd is a self-publisher with experience in magazine publishing, corporate communication, academia, and software development."
   },
   {
@@ -543,9 +480,6 @@ const presentations = [
     "title": "Revamping a youth chess workbook using <span class=\"latex\">L<span>a</span>T<span>e</span>X</span> packages",
     "timezone": "-0700",
     "time": "2022-07-22T18:15:00Z",
-    "slides": [
-      "assets/pdf/Jennifer-Claudio-TUG2022-slides.pdf"
-    ],
     "abstract": "Playing chess can range from a casual pastime to a highly competitive event. Several local organizations offer chess as enrichment programs in K–12 schools, often having their own workbooks to supplement their instruction. One drawback is that these workbooks are often created using screen captures of online sources, hence resulting in low-quality outputs when used for print. This exploration tours a few packages used for typesetting diagrams for chess problems and puzzles and presents comparisons of one enrichment program’s original workbook to equivalent pages produced using <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>."
   },
   {
@@ -591,9 +525,6 @@ const presentations = [
     "abstract": "Tectonic is a software project built around an alternative <span class=\"tex\">T<span>e</span>X</span> engine forked from <span class=\"xetex\">X<span>&#398;</span>T<span>e</span>X</span>. It was created to explore the answers to two questions.  The first question relates to documents: in a world of 21st-century technologies– where interactive displays, computation, and internet connectivity are generally cheap and ubiquitous– what new forms of technical document have become possible? The second question relates to tools: how can we use those same technologies to do a better job of empowering people to create excellent technical documents? The answers are, of course, intertwined: without a system of great tools, it’s hard (or perhaps impossible?) to create great documents.  <br /><br /> The premises of the Tectonic project are that the world needs and deserves a “21st-century” document authoring system, that such a system should have <span class=\"tex\">T<span>e</span>X</span> at its heart– and that in order to create a successful system, parts of the classic <span class=\"tex\">T<span>e</span>X</span> experience will need to be rethought or jettisoned completely.  <br /><br /> This is why Tectonic forks <span class=\"xetex\">X<span>&#398;</span>T<span>e</span>X</span> and is branded independently: while it aspires to maintain compatibility with classic <span class=\"tex\">T<span>e</span>X</span> workflows as far as can be managed, in a certain sense the whole point of the effort is to break compatibility and ignore tradition– to experiment with new ideas that can’t be tried in mainline <span class=\"tex\">T<span>e</span>X</span>. Thus far, these “new ideas” have focused on experience design, seeking to deliver a system that is convenient, empowering, and even delightful for users and developers. Tectonic is therefore compiled using standard Rust tools, installs as a single executable file, and downloads support files from a prebuilt <span class=\"tex\">T<span>e</span>X</span> Live distribution on demand.  <br /><br /> In the past year, long-threatened work on native <span class=\"sm-caps\">HTML</span> output has finally started landing, including a possibly novel Unicode math rendering scheme based on font subsetting. The goal for upcoming work is to flesh out this <span class=\"sm-caps\">HTML</span> support so that Tectonic can create the world’s best web-native technical documents, and to use that support to document the Tectonic system itself.",
     "links": [
       "assets/html/Peter-K-G-Williams-TUG2022-slides"
-    ],
-    "sources": [
-      "assets/html/Peter-K-G-Williams-TUG2022-slides.tar.gz"
     ]
   },
   {
@@ -642,16 +573,6 @@ const presentations = [
     "title": "An atelier de <span class=\"latex\">L<span>a</span>T<span>e</span>X</span>, en Français",
     "timezone": "+0200",
     "time": "2022-07-21T13:00:00Z",
-    "slides": [
-      "assets/pdf/Eric-Guichard-TUG2022-Workshop-Slides.pdf",
-      "assets/pdf/J.-M.-Hufflen-TUG2022-Workshop-Slides.pdf"
-    ],
-    "sources": [
-      "assets/pdf/Eric-Guichard.tar.gz",
-      "assets/pdf/hufflen-demo.tar.gz",
-      "assets/pdf/hufflen-main.tex.gz",
-      "assets/pdf/hufflen-t.tex.gz"
-    ],
     "abstract": "1. Penser LaTeX, penser avec LaTeX Thèmes: histoire de l'écriture, concepts et apports de TeX et LaTeX Éric Guichard, 20 mn + 10 mn de débat.  </p> <p> 2. LaTeX, premiers pas Thèmes: réaliser un premier document en LaTeX; présentation illustrée d'exemples simples.  Éric Guichard, 15 à 20 mn + 10 mn de débat.  </p> <p> 3. Points de typographie Thèmes: généralités, césures, polices, langues.  Jean-Michel Hufflen, 15 à 20 mn + 10 mn de débat.  </p> <p> 4. LaTeX en milieu littéraire Thèmes: normes, confort de lecture, design, dialogue avec les éditeurs, communication avec d'autres systèmes éditoriaux.  Éric Guichard, 15 à 20 mn + 10 mn de débat.  </p> <p> 5. Bibliographies Thèmes: processeurs de bibliographies, styles de base, exemples.  Jean-Michel Hufflen, 15 à 20 mn + 10 mn de débat.  </p> <p> 6. Compléments (si le temps le permet) Thèmes: traitement des images, détournements de LaTeX.  Éric Guichard, 15 à 20 mn + 10 mn de débat."
   }
 ]

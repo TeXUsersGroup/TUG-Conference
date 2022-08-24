@@ -82,21 +82,17 @@ const formatData = (data) => {
       });
     }
 
-    if (pres.sources) {
-      pres.sources.forEach((sourcesFile) => {
-        dataFormatted = `<a href="${sourcesFile}"><img src="assets/img/tgz.png" height="24" alt="Sources" /></a>\n` + dataFormatted;
+    if (pres.pres != 'break') {
+      copyInputFiles(pres, 'sources').forEach((path) => {
+        dataFormatted = `<a href="${path}"><img src="assets/img/tgz.png" height="24" alt="Sources" /></a>\n` + dataFormatted;
       });
-    }
 
-    if (pres.slides) {
-      pres.slides.forEach((slidesFile) => {
-        dataFormatted = `<a class="presLink" href="${slidesFile}"><img class="presLink" src="assets/img/Slides.png" alt="Slides" /></a>\n` + dataFormatted;
+      copyInputFiles(pres, 'slides').forEach((path) => {
+        dataFormatted = `<a class="presLink" href="${path}"><img class="presLink" src="assets/img/Slides.png" alt="Slides" /></a>\n` + dataFormatted;
       });
-    }
 
-    if (pres.preprint) {
-      pres.preprint.forEach((preprintFile) => {
-        dataFormatted = `<a class="pdfLink" href="${preprintFile}"><img src="assets/img/PDF_24.png" alt="Preprint"/></a>` + dataFormatted;
+      copyInputFiles(pres, 'preprint').forEach((path) => {
+        dataFormatted = `<a class="pdfLink" href="${path}"><img src="assets/img/PDF_24.png" alt="Preprint"/></a>` + dataFormatted;
       });
     }
 
@@ -113,11 +109,60 @@ const formatData = (data) => {
     nextTalkTime = thisTalkTime;
   });
 
-  console.log(data);
+  //console.log(data);
   fs.writeFileSync('presentations.js', `const presentations = ${JSON.stringify(data, null, 2)}\n`, 'utf8');
 
   return dataFormatted;
 };
+
+/**
+ * Given a file name and the presentation record, get the long name for this file.
+ * The returned string represents only the file name itself (not the path).
+ * 
+ * @param {Object} pres 
+ * @param {String} fileName 
+ * @returns the long file name
+ */
+ const getLongFileName = (pres, fileName) => {
+  const authors = pres.author;
+  let normalizedAuthorsList = [];
+  
+  pres.author.forEach((author) => {
+    normalizedAuthorsList.push(normalizeAuthorName(author));
+  });
+  const normalizedAuthorsString = normalizedAuthorsList.join("-");
+
+  return `${normalizedAuthorsString}-TUG2022-${pres.pres}-${fileName}`;
+}
+
+const normalizeAuthorName = (author) => {
+  return author.replace(" ", "_");
+}
+
+/**
+ * Copy all files from the given 'assetType' directory into the 'served' folder.
+ * The files are named based on their authors.
+ * 
+ * @param {*} pres the presentation record
+ * @param {*} assetType the asset type (sources / slides / preprint), which corresponds to a sub-folder under the 'tag' folder
+ * @returns list of the copied files (paths of their new file names)
+ */
+const copyInputFiles = (pres, assetType) => {
+  const incomingSourcesDir = `assets/incoming/${pres.pres}/${assetType}`;
+  let destPaths = [];
+  fs.readdirSync(incomingSourcesDir).forEach(file => {
+    const destFileName = getLongFileName(pres, file);
+    const destPath = `assets/served/${destFileName}`;
+    // Copy the file to the 'served' folder
+    fs.copyFile(`${incomingSourcesDir}/${file}`, destPath, (err) => {
+      if (err) {
+        console.log("Error copying file:", err);
+      }
+    });
+    destPaths.push(destPath);
+  });
+  return destPaths;
+}
 
 const writeout = (environment) => {
   const inSchedule = fs.readFileSync('program.html.in', 'utf8');

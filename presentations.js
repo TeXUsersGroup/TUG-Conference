@@ -17,7 +17,10 @@ const presentations = [
     "title": "Type design: Catching up to the past",
     "timezone": "-0600",
     "time": "2022-07-24T20:30:00Z",
-    "abstract": "The typographer’s goal is to provide the best possible reading experience for the reader. Thirty years of disruptive technologies have made this a greater challenge despite the overwhelming number of type designs available to us. Steve Matteson will give several historical and contemporary examples where fonts have been adapted or designed to meet constantly changing technological demands."
+    "abstract": "The typographer’s goal is to provide the best possible reading experience for the reader. Thirty years of disruptive technologies have made this a greater challenge despite the overwhelming number of type designs available to us. Steve Matteson will give several historical and contemporary examples where fonts have been adapted or designed to meet constantly changing technological demands.",
+    "videos": [
+      "https://youtu.be/aB3xs9U2IP0"
+    ]
   },
   {
     "pres": "park-music",

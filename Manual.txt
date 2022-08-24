@@ -43,12 +43,12 @@ time:
 abstract:
 sources:
 slides:
-link:
 preprint:
-video:
+links:
+videos:
 ---------
-The entries "author", "slides", "sources", "link", "preprint"
-and "video" can be multiple, with each entry separated by comma.
+The entries "author", "slides", "sources", "links", "preprint"
+and "videos" can have multiple entries, with each entry separated by comma.
 
 We do not have a way, currently, to associate two different TZs
 for different authors. The TZ to be used will be of the person

@@ -82,6 +82,7 @@ const formatData = (data) => {
       });
     }
 
+    // Copy input files (sources, slides, preprint) and add links to them in the HTML
     if (pres.pres != 'break') {
       copyInputFiles(pres, 'sources').forEach((path) => {
         dataFormatted = `<a href="${path}"><img src="assets/img/tgz.png" height="24" alt="Sources" /></a>\n` + dataFormatted;
@@ -164,7 +165,15 @@ const copyInputFiles = (pres, assetType) => {
   return destPaths;
 }
 
+const createServedDir = () => {
+  const servedPath = "assets/served";
+  if (!fs.existsSync(servedPath)) {
+    fs.mkdirSync(servedPath);
+  }
+}
+
 const writeout = (environment) => {
+  createServedDir();
   const inSchedule = fs.readFileSync('program.html.in', 'utf8');
   const outSchedule = inSchedule.replace(
                         '<list-of-presentations />',

@@ -10,12 +10,14 @@ timezone: +0200
 time: 2022-07-21T13:00:00Z
 abstract: 1. Penser LaTeX, penser avec LaTeX Thèmes: histoire de l'écriture, concepts et apports de TeX et LaTeX Éric Guichard, 20 mn + 10 mn de débat.  </p> <p> 2. LaTeX, premiers pas Thèmes: réaliser un premier document en LaTeX; présentation illustrée d'exemples simples.  Éric Guichard, 15 à 20 mn + 10 mn de débat.  </p> <p> 3. Points de typographie Thèmes: généralités, césures, polices, langues.  Jean-Michel Hufflen, 15 à 20 mn + 10 mn de débat.  </p> <p> 4. LaTeX en milieu littéraire Thèmes: normes, confort de lecture, design, dialogue avec les éditeurs, communication avec d'autres systèmes éditoriaux.  Éric Guichard, 15 à 20 mn + 10 mn de débat.  </p> <p> 5. Bibliographies Thèmes: processeurs de bibliographies, styles de base, exemples.  Jean-Michel Hufflen, 15 à 20 mn + 10 mn de débat.  </p> <p> 6. Compléments (si le temps le permet) Thèmes: traitement des images, détournements de LaTeX.  Éric Guichard, 15 à 20 mn + 10 mn de débat.
 
+
 pres: demeritt-ltxworkshop
 author: Susan DeMeritt,Cheryl Ponchin
 title: <span class="latex">L<span>a</span>T<span>e</span>X</span> workshop, in English
 timezone: -0700
 time: 2022-07-21T16:00:00Z
 abstract: Sue and Cheryl will be giving their classical introduction to <span class="latex">L<span>a</span>T<span>e</span>X</span> workshop, in English.<br /><br />On the first day of the Conference, Sue and Cheryl will conduct a webinar in <span class="latex">L<span>a</span>T<span>e</span>X</span>.  Starting with the basic principles in the morning and then proceeding to more detailed topics in the afternoon. They will cover making Indexes, Tables, Figures, Bibliographes, entering Mathematics and many other topics.  </p> <div class="row"> <div class="column"> <ol class="subjects"> <li>Creating a <span class="latex">L<span>a</span>T<span>e</span>X</span> Document</li> <li>Creating Numbered Section Headings</li> <li>Creating a Section That uses Roman Numerals</li> <li>Still Using Roman Numbering for Sections</li> <li>Changing Numbering Back to Arabic <ol class="secondList"> <li>Creating Subsection Headings</li> <li>Paragraph and Subparagraph</li> </ol> </li> <li class="clear">Creating Footnotes</li> <li>Changing Font Styles</li> <li>Marking the Margin of a Paragraph</li> <li>Text in Columns</li> <li>Creating a Table of Contents</li> <li>Adding to Contents</li> <li>Itemizing, Enumerating, and Nesting</li> <li>Theorems, Lemmas, etc.</li> </ol> </div> <div class="column"> <ol class="subjects" start="14"> <li>Basic Tables</li> <li>Simple Mathematics and Creating Equations <ol class="secondList"> <li>Subscripts and Superscripts</li> <li>Accents</li> <li>Binomial Coefficients</li> <li>Congruence</li> <li>Delimiters</li> <li>Operators</li> <li>Ellipses</li> <li>Integral</li> <li>Sum</li> <li>Matrices</li> </ol> </li> <li class="clear">How to do Bibliographies</li> <li>Getting an Output</li> </ol> </div> </div>
+
 
 pres: borbom-ltxworkshop
 author: Alexánder Borbón
@@ -24,9 +26,11 @@ timezone: -0700
 time: 2022-07-21T19:00:00Z
 abstract: A workshop in <span class="latex">L<span>a</span>T<span>e</span>X</span> in Spanish.
 
+
 pres: break
 time: 2022-07-21T22:00:00Z
 title: Break,
+
 
 pres: veytsman-opening
 author: Boris Veytsman
@@ -35,6 +39,7 @@ timezone: -0700
 time: 2022-07-22T15:00:00Z
 abstract: Opening welcome from Boris Veytsman, the President of TUG.
 
+
 pres: williams-tectonic
 author: Peter K. G. Williams
 title: The Tectonic Project: Envisioning a 21st-century <span class="tex">T<span>e</span>X</span> experience
@@ -42,7 +47,9 @@ keynote: yes
 timezone: -0400
 time: 2022-07-22T15:15:00Z
 abstract: Tectonic is a software project built around an alternative <span class="tex">T<span>e</span>X</span> engine forked from <span class="xetex">X<span>&#398;</span>T<span>e</span>X</span>. It was created to explore the answers to two questions.  The first question relates to documents: in a world of 21st-century technologies– where interactive displays, computation, and internet connectivity are generally cheap and ubiquitous– what new forms of technical document have become possible? The second question relates to tools: how can we use those same technologies to do a better job of empowering people to create excellent technical documents? The answers are, of course, intertwined: without a system of great tools, it’s hard (or perhaps impossible?) to create great documents.  <br /><br /> The premises of the Tectonic project are that the world needs and deserves a “21st-century” document authoring system, that such a system should have <span class="tex">T<span>e</span>X</span> at its heart– and that in order to create a successful system, parts of the classic <span class="tex">T<span>e</span>X</span> experience will need to be rethought or jettisoned completely.  <br /><br /> This is why Tectonic forks <span class="xetex">X<span>&#398;</span>T<span>e</span>X</span> and is branded independently: while it aspires to maintain compatibility with classic <span class="tex">T<span>e</span>X</span> workflows as far as can be managed, in a certain sense the whole point of the effort is to break compatibility and ignore tradition– to experiment with new ideas that can’t be tried in mainline <span class="tex">T<span>e</span>X</span>. Thus far, these “new ideas” have focused on experience design, seeking to deliver a system that is convenient, empowering, and even delightful for users and developers. Tectonic is therefore compiled using standard Rust tools, installs as a single executable file, and downloads support files from a prebuilt <span class="tex">T<span>e</span>X</span> Live distribution on demand.  <br /><br /> In the past year, long-threatened work on native <span class="sm-caps">HTML</span> output has finally started landing, including a possibly novel Unicode math rendering scheme based on font subsetting. The goal for upcoming work is to flesh out this <span class="sm-caps">HTML</span> support so that Tectonic can create the world’s best web-native technical documents, and to use that support to document the Tectonic system itself.
+sources: assets/html/Peter_K_G_Williams-TUG2022-slides.tar.gz
 links: assets/html/Peter-K-G-Williams-TUG2022-slides
+
 
 pres: evia-techdoc
 author: Carlos Evia
@@ -52,12 +59,14 @@ timezone: -0400
 time: 2022-07-22T16:00:00Z
 abstract: This keynote presentation will address how recent trends to align technical documentation practices with “developer-friendly” workflows may be detrimental to documentation authors and their users. A proposed solution is in the recent past of technical documentation as a discipline, where tools and ideas rooted in structured authoring and markup, reuse, and personalization can still provide solutions to present– and future– needs related to technical content. 
 
+
 pres: wright-siunitx3
 author: Joseph Wright
 title: <tt>siunitx</tt>: Launching version&nbsp;3
 timezone: +0100
 time: 2022-07-22T16:45:00Z
 abstract: Since it was first released in 2008, <tt>siunitx</tt> has become established as the major package for typesetting physical quantities in <span class="latex">L<span>a</span>T<span>e</span>X</span>. Following up on my <span class="sm-caps">TUG</span> 2018 talk, I will look at how the update to version~3 has gone now that this is out. I’ll briefly look at the background, then consider some of the user and developer efforts that have made the launch a success.
+
 
 pres: cereda-silly
 author: Paulo Cereda
@@ -66,17 +75,20 @@ timezone: -0300
 time: 2022-07-22T17:30:00Z
 abstract: In this talk, Paulo recollects the untold story of two friends writing a silly package just for the fun of it. The story, however, takes a turn when the <span class="tex">T<span>e</span>X</span> community decides to embrace silliness. Gather around to learn about <span class="tex">T<span>e</span>X</span>, friendship, community, silly walks, and the air speed velocity of an unladen swallow.
 
+
 pres: claudio-chess
 author: Jennifer Claudio
 title: Revamping a youth chess workbook using <span class="latex">L<span>a</span>T<span>e</span>X</span> packages
 timezone: -0700
 time: 2022-07-22T18:15:00Z
 abstract: Playing chess can range from a casual pastime to a highly competitive event. Several local organizations offer chess as enrichment programs in K–12 schools, often having their own workbooks to supplement their instruction. One drawback is that these workbooks are often created using screen captures of online sources, hence resulting in low-quality outputs when used for print. This exploration tours a few packages used for typesetting diagrams for chess problems and puzzles and presents comparisons of one enrichment program’s original workbook to equivalent pages produced using <span class="latex">L<span>a</span>T<span>e</span>X</span>.
+slides: assets/pdf/Jennifer_Claudio-TUG2022-slides.pdf
 
 
 pres: break
 time: 2022-07-22T19:00:00Z
 title: Break,
+
 
 pres: cereda-tempest
 author: Paulo Cereda
@@ -85,12 +97,14 @@ timezone: -0300
 time: 2022-07-22T20:00:00Z
 abstract: In this talk, Paulo recollects 2021 as a challenging year for the Island of <span class="tex">T<span>e</span>X</span>: roadmap changes, lack of resources, server limitations. Yet, resilience, persistence and a bit of good humour made the island even stronger, with new joiners, community support, bold plans and an even brighter future for the <span class="tex">T<span>e</span>X</span> ecosystem. And all just in time for celebrating 10 years of arara, our beloved bird!
 
+
 pres: prentice-selfpub
 author: Lloyd Prentice
 title: A self-publisher's take on <span class="tex">T<span>e</span>X</span>
 timezone: -0400
 time: 2022-07-22T20:45:00Z
 abstract: This presentation touches on:</p> <div class="row"> <div class="column"> <ul> <li> the <span class="latex">L<span>a</span>T<span>e</span>X</span> markdown package; </li> <li> <span class="tex">T<span>e</span>X</span>Live installation </li> <li> user documentation; </li> <li> suitability for self-publishers. </li> </ul> </div> </div> <p> It will present examples of Markdown to <span class="latex">L<span>a</span>T<span>e</span>X</span>-styled <span class="sm-caps">PDF</span>.  <br /><br /> It will also announce two initiatives: a <span class="tex">T<span>e</span>X</span> Live book publishing scheme; and a website where self-publishers can find <span class="tex">T<span>e</span>X</span> Live installation instructions plus book publishing how-tos, tutorials, and resources.  <br /><br /> Lloyd is a self-publisher with experience in magazine publishing, corporate communication, academia, and software development.
+slides: assets/pdf/Lloyd_Prentice-TUG2022-slides.pdf
 
 
 pres: hickman-creports
@@ -100,6 +114,7 @@ timezone: -0500
 time: 2022-07-22T21:30:00Z
 abstract: Matching cancer patients with clinical trials is a complex process. One of the outputs of that process is the production of a <span class="sm-caps">PDF</span> report containing relevant information about a set of trials. In this paper we present strategies, challenges, and conclusions regarding our use of <span class="latex">L<span>a</span>T<span>e</span>X</span> deployed in <span class="sm-caps">AWS</span> to generate <span class="sm-caps">PDF</span> reports.
 
+
 pres: blakesley-production
 author: David Blakesley
 title: The residual concepts of production vs. the emergent cultures of distribution in publishing
@@ -107,11 +122,13 @@ keynote: yes
 timezone: -0400
 time: 2022-07-22T22:15:00Z
 abstract: Who wins? The base or the superstructure? I’m not a Marxist per se, but I’ve lived this struggle for some time as a writer and publisher. In this keynote presentation, I describe my efforts to change or adapt the democratized tools of production to produce new forms of writing, which ultimately led to an ongoing battle with the dominant cultures of production in the world of publishing. I’ll narrate two case studies. One focuses on the writing and production of an innovative, if not disruptive, textbook in the ultra-conservative textbook industry. The second tells the ongoing story of an interloping publishing company (Parlor Press) that reveals the central challenge of <i>distribution</i> for both writers and publishers, from typesetting (print) to transformation (digital). <span class="latex">L<span>a</span>T<span>e</span>X</span> developers and users, take note! The return of the nonbreaking space and soft return is nigh!
+slides: assets/pdf/David_Blakesley-TUG2022-slides.pdf
 
 
 pres: break
 time: 2022-07-22T23:00:00Z
 title: Break,
+
 
 pres: austin-airport
 author: Oliver Austin
@@ -119,6 +136,8 @@ title: Looking outside the cockpit: An in-depth look at airport signage
 timezone: -0700
 time: 2022-07-23T00:00:00Z
 abstract: If you take a quick glance at an airport and its signage, you’ll see many different situations where text is used to enhance and streamline processes for both pilot and ground crew alike. Thus, this exploration will take a closer look at such variations along the taxiway and apron at major airports, also discussing how the onset of autonomous aircraft can factor into it.
+slides: assets/pdf/Oliver_Austin-TUG2022-slides.pdf
+
 
 pres: castaneda-constitutions
 author: Sarai Castañeda

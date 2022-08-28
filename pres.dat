@@ -5,10 +5,10 @@
 pres: guichard-ltxworkshop
 author: Éric Guichard,Jean-Michel Hufflen
 authorascii: Eric Guichard,Jean-Michel Hufflen
-title: Un atelier de <span class="latex">L<span>a</span>T<span>e</span>X</span>, en Français
+title: Atelier <span class="latex">L<span>a</span>T<span>e</span>X</span>, in French
 timezone: +0200
 time: 2022-07-21T13:00:00Z
-abstract: 1. Penser LaTeX, penser avec LaTeX Thèmes: histoire de l'écriture, concepts et apports de TeX et LaTeX Éric Guichard, 20 mn + 10 mn de débat.  </p> <p> 2. LaTeX, premiers pas Thèmes: réaliser un premier document en LaTeX; présentation illustrée d'exemples simples.  Éric Guichard, 15 à 20 mn + 10 mn de débat.  </p> <p> 3. Points de typographie Thèmes: généralités, césures, polices, langues.  Jean-Michel Hufflen, 15 à 20 mn + 10 mn de débat.  </p> <p> 4. LaTeX en milieu littéraire Thèmes: normes, confort de lecture, design, dialogue avec les éditeurs, communication avec d'autres systèmes éditoriaux.  Éric Guichard, 15 à 20 mn + 10 mn de débat.  </p> <p> 5. Bibliographies Thèmes: processeurs de bibliographies, styles de base, exemples.  Jean-Michel Hufflen, 15 à 20 mn + 10 mn de débat.  </p> <p> 6. Compléments (si le temps le permet) Thèmes: traitement des images, détournements de LaTeX.  Éric Guichard, 15 à 20 mn + 10 mn de débat.
+abstract: 1. Penser LaTeX, penser avec LaTeX: histoire de l'écriture, concepts et apports de TeX et LaTeX (Éric Guichard, 20 mn + 10 mn de débat).  <br /><br /> 2. LaTeX, premiers pas: réaliser un premier document en LaTeX; présentation illustrée d'exemples simples (Éric Guichard, 15 à 20 mn + 10 mn de débat.  <br /><br /> 3. Points de typographie: généralités, césures, polices, langues (Jean-Michel Hufflen, 15 à 20 mn + 10 mn de débat).  <br /><br /> 4. LaTeX en milieu littéraire: normes, confort de lecture, design, dialogue avec les éditeurs, communication avec d'autres systèmes éditoriaux (Éric Guichard, 15 à 20 mn + 10 mn de débat).  <br /><br /> 5. Bibliographies: processeurs de bibliographies, styles de base, exemples (Jean-Michel Hufflen, 15 à 20 mn + 10 mn de débat).  <br /><br /> 6. Compléments (si le temps le permet): traitement des images, détournements de LaTeX (Éric Guichard, 15 à 20 mn + 10 mn de débat).
 
 
 pres: demeritt-ltxworkshop
@@ -65,7 +65,7 @@ author: Joseph Wright
 title: <tt>siunitx</tt>: Launching version&nbsp;3
 timezone: +0100
 time: 2022-07-22T16:45:00Z
-abstract: Since it was first released in 2008, <tt>siunitx</tt> has become established as the major package for typesetting physical quantities in <span class="latex">L<span>a</span>T<span>e</span>X</span>. Following up on my <span class="sm-caps">TUG</span> 2018 talk, I will look at how the update to version~3 has gone now that this is out. I’ll briefly look at the background, then consider some of the user and developer efforts that have made the launch a success.
+abstract: Since it was first released in 2008, <tt>siunitx</tt> has become established as the major package for typesetting physical quantities in <span class="latex">L<span>a</span>T<span>e</span>X</span>. Following up on my <span class="sm-caps">TUG</span> 2018 talk, I will look at how the update to version&nbsp;3 has gone now that this is out. I’ll briefly look at the background, then consider some of the user and developer efforts that have made the launch a success.
 
 
 pres: cereda-silly
@@ -81,7 +81,7 @@ author: Jennifer Claudio
 title: Revamping a youth chess workbook using <span class="latex">L<span>a</span>T<span>e</span>X</span> packages
 timezone: -0700
 time: 2022-07-22T18:15:00Z
-abstract: Playing chess can range from a casual pastime to a highly competitive event. Several local organizations offer chess as enrichment programs in K–12 schools, often having their own workbooks to supplement their instruction. One drawback is that these workbooks are often created using screen captures of online sources, hence resulting in low-quality outputs when used for print. This exploration tours a few packages used for typesetting diagrams for chess problems and puzzles and presents comparisons of one enrichment program’s original workbook to equivalent pages produced using <span class="latex">L<span>a</span>T<span>e</span>X</span>.
+abstract: Playing chess can range from a casual pastime to a highly competitive event. Several local organizations offer chess as enrichment programs in K&nbsp;12 schools, often having their own workbooks to supplement their instruction. One drawback is that these workbooks are often created using screen captures of online sources, hence resulting in low-quality outputs when used for print. This exploration tours a few packages used for typesetting diagrams for chess problems and puzzles and presents comparisons of one enrichment program’s original workbook to equivalent pages produced using <span class="latex">L<span>a</span>T<span>e</span>X</span>.
 slides: assets/pdf/Jennifer_Claudio-TUG2022-slides.pdf
 
 
@@ -254,7 +254,7 @@ author: Tia Luc
 title: Observations and analysis of Vietnamese text
 timezone: -0700
 time: 2022-07-23T21:30:00Z
-abstract: Having Vietnamese as my first language and English as my dominant language has inspired exploration of the history and applications of the former. Considering how Vietnamese and English both use the Latin alphabet, this presentation will explore the similarities and differences between the two using a collection of instances in which Vietnamese text is displayed in our world.
+abstract: Having Vietnamese as my first language and English as my dominant language has inspired exploration of the history and applications of the former. Considering how Vietnamese and English both use the Latin alphabet, this presentation will explore the similarities and differences between the two, using a collection of instances in which Vietnamese text is displayed in our world.
 
 pres: chernoff-engines
 author: Max Chernoff
@@ -279,7 +279,7 @@ title: In conversation with Paulo Ney de Souza
 author: Boris Veytsman
 timezone: -0700
 time: 2022-07-24T01:00:00Z
-abstract: Boris Veytsman, the president of TUG will be interviewed live by Paulo Ney de Souza, and you will be able to join the coversation.
+abstract: Boris Veytsman, the president of TUG, will be interviewed live by Paulo Ney de Souza, and you will be able to join the conversation.
 
 pres: moore-tables
 author: Ross Moore
@@ -294,7 +294,7 @@ author: Vafa Khalighi
 title: Bidirectional multi-columns and paragraph footnotes in <span class="tex">T<span>e</span>X</span>
 timezone: +1000
 time: 2022-07-24T02:30:00Z
-abstract: Appendix D (Dirty Tricks) of <span class="tex">T<span>e</span>X</span>Book describes algorithms for multi-column typesetting and paragraph footnotes, among much more. The described algorithms are used in various <span class="tex">T<span>e</span>X</span> packages such as <tt>footmisc</tt>, <tt>fnpara</tt>, <tt>manyfoot</tt>, and many others.  <br /><br /> When the package <tt>multicol</tt> is used, things get more complicated.  Another level of complication arises when you want to mix these with both right to left and left to right typesetting.  <br /><br /> The <tt>bidi</tt> package provides both right to left and left to right multi-columns and paragraph footnotes.  <br /><br /> This talk will describe my own experience learning about how other packages implement multi-columns and paragraph footnotes, and also the approach I took in the bidi package for typesetting right to left and left to right multi-columns and paragraph footnotes.
+abstract: Appendix D (Dirty Tricks) of <span class="tex">T<span>e</span>X</span>Book describes algorithms for multi-column typesetting and paragraph footnotes, among much more. The described algorithms are used in various <span class="tex">T<span>e</span>X</span> packages such as <tt>footmisc</tt>, <tt>fnpara</tt>, <tt>manyfoot</tt>, and many others.  <br /><br /> When the package <tt>multicol</tt> is used, things get more complicated.  Another level of complication arises when you want to mix these with both right to left and left to right typesetting.  <br /><br /> The <tt>bidi</tt> package provides both right to left and left to right multi-columns and paragraph footnotes.  <br /><br /> This talk will describe my own experience learning about how other packages implement multi-columns and paragraph footnotes, and also the approach I took in the <tt>bidi</tt> package for typesetting right to left and left to right multi-columns and paragraph footnotes.
 
 pres: break
 time: 2022-07-24T03:15:00Z
@@ -393,7 +393,7 @@ author: John Lees-Miller
 title: In conversation with Paulo Ney de Souza
 timezone: +0100
 time: 2022-07-24T17:15:00Z
-abstract: John Lees-Miller, the CTO of Overleaf will be interviewed live by Paulo Ney de Souza, and you will be able to join the coversation.
+abstract: John Lees-Miller, the CTO of Overleaf, will be interviewed live by Paulo Ney de Souza, and you will be able to join the conversation.
 
 pres: break
 time: 2022-07-24T18:00:00Z

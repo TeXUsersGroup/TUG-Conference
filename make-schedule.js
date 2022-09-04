@@ -63,7 +63,7 @@ const formatData = (data) => {
       klass = 'accordion';
     }
 
-    dataFormatted = `</button>
+    dataFormatted = `</h2>
       <div class="panel">
       <p>
       ${pres.abstract}
@@ -104,7 +104,7 @@ const formatData = (data) => {
       const authorsLine = new Intl.ListFormat('en-GB', { style: 'short', type: 'conjunction' }).format(pres.author);
             dataFormatted = `| ${authorsLine} ` + dataFormatted;
     }
-    dataFormatted = `<button class="${klass}" id="${pres.time}">
+    dataFormatted = `<h2 class="${klass}" id="${pres.time}">
       <span class="timeboxL" data-datetime="${pres.time}"></span>\n` + dataFormatted;
 
     nextTalkTime = thisTalkTime;

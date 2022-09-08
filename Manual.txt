@@ -29,6 +29,8 @@ The programs that it drives
   Credits
   YouTube upload
 
+YouTube uploads
+----------------
 
 How to enter an Abstract
 ------------------------
@@ -134,11 +136,6 @@ Auxiliary files::
 -----------------
 
   sched.html.in
-  development-scripts.html.in
-  production-scripts.html.in
-
-
-
 
 
 
@@ -422,3 +419,14 @@ git push
 Auxiliary files::
 -----------------
 
+YouTube uploads
+----------------
+
+The structure is for the Playlists is:
+
+Lectures
+Interviews
+Keynote Addresses
+Beginning LaTeX Workshop
+
+and each video is supposed to be there just once.

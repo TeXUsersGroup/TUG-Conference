@@ -39,7 +39,8 @@
 </div>
 
 <div class="c">
-<button onclick="toggleAll()">Open/Close all abstracts</button>
+  <button id="toggle-poshlets">Toggle poshlets</button>
+  <button onclick="toggleAll()">Open/Close all abstracts</button>
 </div>
 <br>
 
@@ -796,6 +797,7 @@ for (i = 0; i < acc.length; i++) {
 }
 
 $( document ).ready(function() {
+    const poshletClasses = ".latex, .tex, .xetexwithsub, .xetex, .xesomething";
 
     function displayUserTimezone() {
         tzString = moment.tz.guess();
@@ -803,7 +805,7 @@ $( document ).ready(function() {
     }
 
     function displayUserTime() {
-        // For Civilan Time:
+        // For Civilian Time:
         //timeString = moment().format('LTS');
         timeString = moment().format('H:mm:ss A');
         $('#yourTime').html(timeString);
@@ -828,7 +830,23 @@ $( document ).ready(function() {
     setInterval(function() {
         displayUserTime()
     }, 1000);
-    
+    togglePoshlets(getPoshletsState());
+
+    function togglePoshlets(enabled) {
+      $(poshletClasses).toggleClass("poshlet-enabled", enabled);
+    }
+
+    function getPoshletsState() {
+      var poshletEnabled = localStorage.getItem('poshletEnabled');
+      // Convert the string to boolean
+      return (poshletEnabled === 'true');
+    }
+
+    $('#toggle-poshlets').click(function(e) {
+      var poshletEnabled = !getPoshletsState();
+      togglePoshlets(poshletEnabled);
+      localStorage.setItem('poshletEnabled', poshletEnabled);
+    });
 });
 
 </script>

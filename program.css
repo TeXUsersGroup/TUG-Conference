@@ -323,3 +323,7 @@ div.c button {
 
 h2 { margin: 0 auto; padding: 11px 21px !important; line-height: 1.4rem; font-weight: 400; font-family: "Helvetica Neue", Helvetica, sans-serif; }
 h2:hover { background-color: #666 !important; color: white !important; }
+
+#yourTimeZone {
+  width: 250px;
+}

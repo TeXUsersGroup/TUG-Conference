@@ -820,6 +820,51 @@ $( document ).ready(function() {
         $('#yourTime').html(timeString);
     }
 
+    /**
+     * Goes through all items (sessions) and marks the 'current' one as "active-session".
+     * This would affect its appearance (blinking background)
+     */
+    function markActiveSession() {
+        var prevSession = {};
+
+        var now  = getCurrentMoment();
+        $('.timeboxL').each(function(i, e) {
+            var $e = $(e);
+            var datetime = $e.data('datetime');
+            // Skip in case datetime attribute is not there
+            if (datetime == null) {
+                return true;
+            }
+            var d = moment(datetime);
+            if (prevSession.moment) {
+                var isActiveSession = now.isBetween(prevSession.moment, d);
+                prevSession.$element.parent().toggleClass("active-session", isActiveSession);
+            }
+            prevSession = {
+                moment: d,
+                $element: $e
+            }
+        });
+
+        // Also check the last session
+        if (prevSession.moment) {
+            const lastSessionDurationMinutes = 45;
+            var endOfSession = prevSession.moment.clone().add(lastSessionDurationMinutes, 'minutes');
+            var isActiveSession = now.isBetween(prevSession.moment, endOfSession);
+            prevSession.$element.parent().toggleClass("active-session", isActiveSession);
+        }
+    }
+
+    function getCurrentMoment() {
+        // For testing, hardcode current time
+        // var now  = moment('2022-07-22T16:03:01Z');
+        // var now  = moment('2022-07-24T21:59:01Z');
+
+        // For production, get actual current time
+        var now  = moment();
+        return now;
+    }
+
     function set_local_time() {
         // Find all timeboxL elements and display their time.
         $('.timeboxL').each(function(i, e) {
@@ -842,7 +887,8 @@ $( document ).ready(function() {
     // To prevent initial flickering, show user time on load
     displayUserTime();
     setInterval(function() {
-        displayUserTime()
+        displayUserTime();
+        markActiveSession();
     }, 1000);
     togglePoshlets(getPoshletsState());
 

@@ -116,6 +116,8 @@ $( document ).ready(function() {
     });
 
     displayUserTimezone();
+    // To prevent initial flickering, show user time on load
+    displayUserTime();
     setInterval(function() {
         displayUserTime()
     }, 1000);

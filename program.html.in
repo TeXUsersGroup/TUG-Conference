@@ -92,7 +92,7 @@ $( document ).ready(function() {
     }
 
     function displayUserTime() {
-        // For Civilan Time:
+        // For Civilian Time:
         //timeString = moment().format('LTS');
         timeString = moment().format('H:mm:ss A');
         $('#yourTime').html(timeString);

@@ -2,13 +2,20 @@
 The database
 ------------
 
-  The fields
+  The fields of pres.dat
   Examples
   How to fill it in
   Utilities: trans.sed   --> Sed script used to translate pidgin-TeX in abstracts to HTML.
   Editing YouTube titles by hand
   Preparing the schedule — entering a Break
   Limitations
+
+Auxiliaary data tables
+----------------------
+
+  The speakers (spkr.dat)
+  The schedule (schedule.dat)
+  The privacy table
 
 The programs that it drives
 ---------------------------
@@ -356,6 +363,48 @@ Utilities for help writing the DB
 ----------------------------------
 
 "trans.sed" is a small sed script to change pidgin-TeX to HTML, for the title and abstract.
+
+
+Auxiliaary data tables
+----------------------
+
+  The speakers
+
+  The schedule
+
+This table drives the schedule and it allows te schedule to place important information
+according to the time of the year along the conference.
+
+It has the following 4 fields:
+
+call-for-papers:
+start-of-conference:
+closing-of-conference:
+publishing-of-videos:
+
+That contain the Zulu time for each of these events.
+
+For time in between:
+
+start-of-conference:
+closing-of-conference:
+
+iwhich is the Conference at full speed it pulls the information on Zoom, Browser and YouTube streaming as 
+well as Social Networks spaces.
+
+After the closing, that is in between:
+
+closing-of-conference:
+publishing-of-videos:
+
+it informs people of the Day streams being available on YT.
+
+And after the:
+
+publishing-of-videos:
+
+It informs viewers about videos being available at the YT Channel.
+
 
 
 The program that it drives

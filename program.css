@@ -139,8 +139,9 @@ div.c {
 }
 
 div.c button {
-  text-align: center; 
+  text-align: center;
   padding: 11px;
+  margin: 21px 0 0 11px;
 }
 
 /* For the two colum*/

@@ -31,12 +31,14 @@
 </div>
 
 <div class="attention">
-  <h3 class="firstDate laTime"><img class="clockIcon" src="assets/img/icon-clock.png" alt="Current time" />Current local time is <span id="yourTime"></span>, as determined from your browser. All presentation times below are in time zone: <span id="yourTimeZone"></span>. If that is not correct adjust your system setting!</h3>
-
+  <h3 class="firstDate laTime"><img class="clockIcon" src="assets/img/icon-clock.png" alt="Current time" />Current local time is <span id="yourTime"></span>, as determined from your browser. All presentation times below are in time zone: <input id="yourTimeZone" list="timezones" type="text"/>.</h3>
   <!--
   <h3 class="calendar"><a href="https://tug.org/tug2020/tug2020.ics"><img class="calendarIcon" src="img/icon-calendar.png" alt="Add to calendar" />Download ICS calendar file to add presentation times</a> to your calendar. Instructions <a href="https://tug.org/tug2020/ICS_import.html">here</a>.</h3>
   -->
 </div>
+
+<datalist id="timezones">
+</datalist>
 
 <div class="c">
   <button id="toggle-poshlets">Toggle poshlets</button>
@@ -49,6 +51,7 @@
 <list-of-presentations />
 
 <script>
+"use strict";
 function toggleAll(){
     var acc = document.getElementsByClassName("accordion");
     var count = acc.length
@@ -86,35 +89,44 @@ for (i = 0; i < acc.length; i++) {
 }
 
 $( document ).ready(function() {
+    const timezone = document.getElementById('yourTimeZone')
+
+    timezone.oninput = function () {
+        moment.tz.setDefault(this.value)
+        set_local_time()
+    }
     const poshletClasses = ".latex, .tex, .xetexwithsub, .xetex, .xesomething";
 
     function displayUserTimezone() {
-        tzString = moment.tz.guess();
-        $('#yourTimeZone').html(tzString);
+        var tzString = moment.tz.guess();
+        timezone.value = tzString;
     }
 
     function displayUserTime() {
         // For Civilian Time:
         //timeString = moment().format('LTS');
-        timeString = moment().format('H:mm:ss A');
+        var timeString = moment().format('H:mm:ss A');
         $('#yourTime').html(timeString);
     }
-  
-    // Find all timeboxL elements and display their time.
-    $('.timeboxL').each(function(i, e) {
-        $e = $(e);
-        var datetime = $e.data('datetime');
-        // Skip in case datetime attribute is not there
-        if (datetime == null) {
-            return true;
-        }
-        var d = moment(datetime);
-        // Format in local time. See: https://momentjs.com/docs/#/displaying/format/
-        //var localTimeStr = d.format('llll');
-        var localTimeStr = d.format("ddd, D MMM – H:mm A");
-        $e.html(localTimeStr);
-    });
 
+    function set_local_time() {
+        // Find all timeboxL elements and display their time.
+        $('.timeboxL').each(function(i, e) {
+            var $e = $(e);
+            var datetime = $e.data('datetime');
+            // Skip in case datetime attribute is not there
+            if (datetime == null) {
+                return true;
+            }
+            var d = moment(datetime);
+            // Format in local time. See: https://momentjs.com/docs/#/displaying/format/
+            //var localTimeStr = d.format('llll');
+            var localTimeStr = d.format("ddd, D MMM – H:mm A");
+            $e.html(localTimeStr);
+        });
+    }
+
+    set_local_time()
     displayUserTimezone();
     // To prevent initial flickering, show user time on load
     displayUserTime();
@@ -140,6 +152,16 @@ $( document ).ready(function() {
     });
 });
 
+{
+      const timezones_el = document.getElementById('timezones')
+      const all_timezones = moment.tz.names()
+
+      for (const timezone of all_timezones) {
+        const option = document.createElement('option')
+        option.value = timezone
+        timezones_el.appendChild(option)
+      }
+}
 </script>
 
 </body>

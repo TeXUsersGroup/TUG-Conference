@@ -90,17 +90,48 @@ for (i = 0; i < acc.length; i++) {
 }
 
 $( document ).ready(function() {
-    const timezone = document.getElementById('yourTimeZone')
+    const timezoneInput = document.getElementById('yourTimeZone')
 
-    timezone.oninput = function () {
-        moment.tz.setDefault(this.value)
-        setLocalTime()
+    timezoneInput.oninput = function () {
+        if (this.value === "") {
+            return;
+        }
+
+        // Ignore if the value is not in the list of timezones
+        if (!moment.tz.names().includes(this.value)) {
+            return;
+        }
+
+        setDefaultTimezone(this.value);
     }
+
+    timezoneInput.onchange = function () {
+        // Handle empty value (user cleared the input box).
+        if (this.value === "") {
+            this.value = moment.tz.guess();
+            // Trigger 'input' event, so the new value will be handled
+            this.dispatchEvent(new Event('input'));
+        }
+    }
+
+    /**
+     * 1. Sets the given timezone as the default for moment.tz
+     * 2. Stores this timezone in local storage as 'preferredTimezone'
+     * 3. Reformat all dates on the page.
+     */
+    function setDefaultTimezone(newTimezone) {
+      moment.tz.setDefault(newTimezone);
+      localStorage.setItem('preferredTimezone', newTimezone);
+      formatDatetimes();
+    }
+
     const poshletClasses = ".latex, .tex, .xetexwithsub, .xetex, .xesomething";
 
     function displayUserTimezone() {
-        var tzString = moment.tz.guess();
-        timezone.value = tzString;
+        var preferredTimezone = localStorage.getItem('preferredTimezone');
+        var tzString = preferredTimezone || moment.tz.guess();
+        moment.tz.setDefault(tzString);
+        timezoneInput.value = tzString;
     }
 
     function displayUserTime() {
@@ -155,7 +186,7 @@ $( document ).ready(function() {
         return now;
     }
 
-    function setLocalTime() {
+    function formatDatetimes() {
         // Find all timeboxL elements and display their time.
         $('.timeboxL').each(function(i, e) {
             var $e = $(e);
@@ -172,8 +203,8 @@ $( document ).ready(function() {
         });
     }
 
-    setLocalTime()
     displayUserTimezone();
+    formatDatetimes();
     // To prevent initial flickering, show user time on load
     displayUserTime();
     setInterval(function() {

@@ -149,16 +149,6 @@ $(document).ready(function () {
         });
     }
 
-    displayUserTimezone();
-    formatDatetimes();
-    // To prevent initial flickering, show user time on load
-    displayUserTime();
-    setInterval(function () {
-        displayUserTime();
-        markActiveSession();
-    }, 1000);
-    togglePoshlets(getPoshletsState());
-
     function togglePoshlets(enabled) {
         $(poshletClasses).toggleClass("poshlet-enabled", enabled);
     }
@@ -169,20 +159,31 @@ $(document).ready(function () {
         return (poshletEnabled === 'true');
     }
 
+    function addTimezoneOptions() {
+        const timezones_el = document.getElementById('timezones')
+        const all_timezones = moment.tz.names()
+    
+        for (const timezone of all_timezones) {
+            const option = document.createElement('option')
+            option.value = timezone
+            timezones_el.appendChild(option)
+        }
+    }
+
+    displayUserTimezone();
+    formatDatetimes();
+    // To prevent initial flickering, show user time on load
+    displayUserTime();
+    setInterval(function () {
+        displayUserTime();
+        markActiveSession();
+    }, 1000);
+    togglePoshlets(getPoshletsState());
+    addTimezoneOptions();
+
     $('#toggle-poshlets').click(function (e) {
         var poshletEnabled = !getPoshletsState();
         togglePoshlets(poshletEnabled);
         localStorage.setItem('poshletEnabled', poshletEnabled);
     });
 });
-
-{
-    const timezones_el = document.getElementById('timezones')
-    const all_timezones = moment.tz.names()
-
-    for (const timezone of all_timezones) {
-        const option = document.createElement('option')
-        option.value = timezone
-        timezones_el.appendChild(option)
-    }
-}

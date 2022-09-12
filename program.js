@@ -1,41 +1,23 @@
 "use strict";
-function toggleAll() {
-    var acc = document.getElementsByClassName("accordion");
-    var count = acc.length
-    var open = 0;
-    for (let i = 0; i < count; i++) {
-        open += 1 ? acc[i].nextElementSibling.style.display == "block" : 0
-    }
-    for (var i = 0; i < acc.length; i++) {
-        var panel = acc[i].nextElementSibling;
-        if (open == count) {
-            if (acc[i].classList.contains("active"))
-                acc[i].classList.toggle("active");
-            panel.style.display = "none";
-        } else {
-            if (!acc[i].classList.contains("active"))
-                acc[i].classList.toggle("active");
-            panel.style.display = "block";
-        }
-    }
-}
-
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-            panel.style.display = "none";
-        } else {
-            panel.style.display = "block";
-        }
-    });
-}
 
 $(document).ready(function () {
+    $(".accordion").click(function(e) {
+        var $e = $(this);
+        $e.toggleClass("active");
+        var panel = $e.next();
+        panel.toggle();
+    });
+
+    $("#toggle-abstracts").click(function(e) {
+        var allOpen = $(".accordion.active").length  == $(".accordion").length;
+        $(".accordion").each(function(i, e) {
+            var $e = $(e);
+            $e.toggleClass("active", !allOpen);
+            var panel = $e.next();
+            panel.toggle(!allOpen);
+        });
+    });
+    
     const timezoneInput = document.getElementById('yourTimeZone')
 
     timezoneInput.oninput = function () {

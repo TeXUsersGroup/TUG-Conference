@@ -43,7 +43,7 @@
 
 <div class="c">
   <button id="toggle-poshlets">Toggle poshlets</button>
-  <button onclick="toggleAll()">Open/Close all abstracts</button>
+  <button id="toggle-abstracts">Open/Close all abstracts</button>
 </div>
 <br>
 

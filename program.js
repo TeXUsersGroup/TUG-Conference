@@ -1,6 +1,50 @@
 "use strict";
 
 $(document).ready(function () {
+    /**
+     * Creates a current 'moment' object, with option to inject a "fake" time, based on requested timestamp as defined
+     * in the URL using the 'time' parameter (expected in ISO8601 format).
+     * 
+     * Examples:
+     * 1. ?time=2022-07-22T16:03:01Z
+     * 2. ?time=2022-07-22T08:01 (assumes your own timezone)
+     */
+    class MomentGenerator {
+        constructor() {
+            this.offsetDuration = null;
+
+            const urlParams = new URLSearchParams(window.location.search);
+            const fakeTimeStr = urlParams.get('time')
+
+            if (!fakeTimeStr) {
+                return;
+            }
+
+            var fakeTime = moment(fakeTimeStr, moment.defaultFormat);
+            if (fakeTime.isValid()) {
+                // How much needs to be added to current time in order to get to the provided fake date-time.
+                this.offsetDuration = moment.duration(fakeTime.diff(moment()));
+            }
+        }
+
+        /**
+         * Get the current moment object.
+         * If the 'time' URL parameter was present when the page was loaded, the returned moment will be based on that
+         * initial time.
+         * 
+         * @returns Moment object
+         */
+        currentMoment() {
+            var now = moment();
+            if (this.offsetDuration) {
+                now.add(this.offsetDuration)
+            }
+            return now;
+        }
+    }
+
+    var momentGenerator = new MomentGenerator();
+
     $(".accordion").click(function(e) {
         var $e = $(this);
         $e.toggleClass("active");
@@ -65,7 +109,7 @@ $(document).ready(function () {
     function displayUserTime() {
         // For Civilian Time:
         //timeString = moment().format('LTS');
-        var timeString = moment().format('H:mm:ss A');
+        var timeString = momentGenerator.currentMoment().format('H:mm:ss A');
         $('#yourTime').html(timeString);
     }
 
@@ -76,7 +120,7 @@ $(document).ready(function () {
     function markActiveSession() {
         var prevSession = {};
 
-        var now = getCurrentMoment();
+        var now = momentGenerator.currentMoment();
         $('.timeboxL').each(function (i, e) {
             var $e = $(e);
             var datetime = $e.data('datetime');
@@ -102,16 +146,6 @@ $(document).ready(function () {
             var isActiveSession = now.isBetween(prevSession.moment, endOfSession);
             prevSession.$element.parent().toggleClass("active-session", isActiveSession);
         }
-    }
-
-    function getCurrentMoment() {
-        // For testing, hardcode current time
-        // var now  = moment('2022-07-22T16:03:01Z');
-        // var now  = moment('2022-07-24T21:59:01Z');
-
-        // For production, get actual current time
-        var now = moment();
-        return now;
     }
 
     function formatDatetimes() {

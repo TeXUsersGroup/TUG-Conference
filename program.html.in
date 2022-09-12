@@ -6,6 +6,8 @@
 <script type="text/javascript" src="https://momentjs.com/downloads/moment.js"></script>
 <script type="text/javascript" src="https://momentjs.com/downloads/moment-timezone-with-data-10-year-range.js"></script>
 
+<script type="text/javascript" src="program.js"></script>
+
 <link rel="stylesheet" href="program.css">
 <link rel="stylesheet" href="poshlets.css">
 <link rel="stylesheet" href="smallcaps.css">
@@ -50,6 +52,5 @@
 <!-- DAY ONE -->
 <!-- <h3 class="firstDate">Day One</h3> -->
 <list-of-presentations />
-<script type="text/javascript" src="program.js"></script>
 </body>
 </html>

@@ -55,7 +55,7 @@ const formatData = (data) => {
     if (!pres.time) return;
     const thisTalkTime = Date.parse(pres.time);
 
-    if (/^Break,/.test(pres.title)) {
+    if (pres.pres === 'break') {
       klass = 'accordion-break';
       const duration = nextTalkTime - thisTalkTime;
       pres.title = `Break, ${formatDuration(duration)}`.trim();

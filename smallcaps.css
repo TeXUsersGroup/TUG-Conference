@@ -1,0 +1,12 @@
+.sm-caps {
+   text-transform: uppercase; font-size: 0.85em !important; 
+}
+
+.sans-serif {
+   font-family: Helvetica, Arial, Sans-Serif;
+}
+
+.smallcaps {
+  font-variant: small-caps !important;
+}
+

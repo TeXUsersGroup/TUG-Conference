@@ -51,6 +51,8 @@ body {
   display: none;
   background-color: white;
   overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .smcp {
@@ -76,12 +78,14 @@ p:last-child {
   margin:21px auto 36px auto;
 }
 
+/*
 ol, ul  { 
-/*  float:left; */
+  float:left;
   width:75%;
   margin:21px auto;
   padding-left:0;
  }
+*/
 ol.secondList, ul.secondList  { 
   padding-left:50px;
   width:100%;
@@ -96,7 +100,7 @@ li {
   letter-spacing: 0.02em;
   padding-bottom:17px;
 }
-ol.participants li, ul.participants li, ol.subjects li, {
+ol.participants li, ul.participants li, ol.subjects li {
   padding-bottom:9px;
 }
 li:last-child {
@@ -117,9 +121,10 @@ h3 {
 h3.firstDate {
     margin:11px auto 21px auto;
 }
+
 h3.calendar, h3.laTime {
     margin:11px auto 21px auto;
-    background-color: #FFF;
+    background-color: none;
     padding: 0 11px 0 21px;
     min-height:48px;
     line-height: 28px;
@@ -176,14 +181,15 @@ div.c button {
 .presLink { margin: 0 0 0 5px; }
 
 .attention  {
-  width:70%;
+  max-width: 60%;
   padding: 20px 20px 0 20px;
   border:1px #000 dashed;
   overflow: hidden;
   margin: 0 auto;
   -webkit-box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);
   -moz-box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);
-  box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);"
+  box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);
+  background-color: #f5f5f5;
 }
 
 .calendarIcon, .clockIcon  { float: left; display:block; width:36px; height:36px; margin:-5px 11px 0 0; }
@@ -215,27 +221,28 @@ div.c button {
   margin: 40px auto 30px auto;
   -webkit-box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);
   -moz-box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);
-  box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);"
+  box-shadow: -1px 10px 5px 0px rgba(219,219,219,1);
+  background-color: #f5f5f5; 
 }
 
 .linkList{
   max-width: 51rem;
   margin: 0 auto 30px auto;
-  background-color: #fff;
+  background-color: none;
   overflow: hidden;
 }
 
 .linkList li {
   float:left;
   display: block;
-  background: #FFF url('img/icon-zoom.png') no-repeat left center;
+  background: url('img/icon-zoom.png') no-repeat left center;
   padding:0;
   margin:0;
   padding-left:50px;
   margin: 30px 0 15px 30px;
   height: 40px;
   padding-top:11px;
-  background-color: #ccc;
+  background-color: none;
 }
 
 #zoom-list {
@@ -248,7 +255,7 @@ div.c button {
   background: #FFF url('img/icon-live.png') no-repeat left top;
 }
 #youtube-list {
-  background: #FFF url('img/icon-youtube.png') no-repeat left top;
+  background: url('img/icon-youtube.png') no-repeat left top;
 }
 #info-list {
   background: #FFF url('img/icon-info.png') no-repeat left top;
